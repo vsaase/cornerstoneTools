@@ -1,0 +1,2762 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>API · cornerstone-tools</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-versions/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-theme-cornerstone/cornerstone.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="migration/" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <a target="_blank" href="https://github.com/cornerstonejs/cornerstoneTools/releases">
+            
+                    
+                    Release Notes
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Essentials</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="installation.html">
+            
+                <a href="installation.html">
+            
+                    
+                    Installation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="./">
+            
+                <a href="./#what-is-cornerstone-tools-js">
+            
+                    
+                    What is CornerstoneTools.js?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="./">
+            
+                <a href="./#getting-started">
+            
+                    
+                    Getting Started
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="./">
+            
+                <a href="./#configuration">
+            
+                    
+                    Configuration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="./">
+            
+                <a href="./#adding-and-using-tools">
+            
+                    
+                    Adding and Using Tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.5" data-path="./">
+            
+                <a href="./#next-steps">
+            
+                    
+                    Next Steps
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="contributing.html">
+            
+                <a href="contributing.html">
+            
+                    
+                    Contributing
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tools In-Depth</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="anatomy-of-a-tool/">
+            
+                <a href="anatomy-of-a-tool/">
+            
+                    
+                    Anatomy of a Tool
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="anatomy-of-a-tool/">
+            
+                <a href="anatomy-of-a-tool/#modes">
+            
+                    
+                    Modes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="anatomy-of-a-tool/">
+            
+                <a href="anatomy-of-a-tool/#interaction-types">
+            
+                    
+                    Interaction Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="anatomy-of-a-tool/">
+            
+                <a href="anatomy-of-a-tool/#strategies">
+            
+                    
+                    Strategies
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="anatomy-of-a-tool/">
+            
+                <a href="anatomy-of-a-tool/#configuration">
+            
+                    
+                    Configuration
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="tool-types/">
+            
+                <a href="tool-types/">
+            
+                    
+                    Tool Types
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="tool-types/">
+            
+                <a href="tool-types/#base-tool">
+            
+                    
+                    Base Tool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="tool-types/">
+            
+                <a href="tool-types/#annotation-tool">
+            
+                    
+                    Annotation Tool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="tool-types/">
+            
+                <a href="tool-types/#brush-tool">
+            
+                    
+                    Brush Tool
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="tool-behaviors/">
+            
+                <a href="tool-behaviors/">
+            
+                    
+                    Tool Behaviors
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="tool-behaviors/">
+            
+                <a href="tool-behaviors/#binary-tools">
+            
+                    
+                    Binary Tool
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="custom-tools/">
+            
+                <a href="custom-tools/">
+            
+                    
+                    Custom Tools
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.1" data-path="custom-tools/">
+            
+                <a href="custom-tools/#the-tool-interface">
+            
+                    
+                    The Tool Interface
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.2" data-path="custom-tools/">
+            
+                <a href="custom-tools/#extending-existing-tools">
+            
+                    
+                    Extending Existing Tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.3" data-path="custom-tools/">
+            
+                <a href="custom-tools/#mixin-behaviors">
+            
+                    
+                    Mixin Behaviors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.4" data-path="custom-tools/">
+            
+                <a href="custom-tools/#mode-change-callbacks">
+            
+                    
+                    Mode Change Callbacks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5" data-path="custom-tools/">
+            
+                <a href="custom-tools/#event-dispatcher-callbacks">
+            
+                    
+                    Event Dispatcher Callbacks
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Migrating</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="migration/">
+            
+                <a href="migration/#2x">
+            
+                    
+                    Migration from 2.x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="migration/">
+            
+                <a href="migration/#1x">
+            
+                    
+                    Migration from 1.x
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Misc</li>
+        
+        
+    
+        <li class="chapter active" data-level="5.1" data-path="api.html">
+            
+                <a href="api.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" >
+            
+                <span>
+            
+                    
+                    3rd Party Tool Directory
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" >
+            
+                <span>
+            
+                    
+                    Custom Tool Example Repositories
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+  
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >API</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <!-- Generated by documentation.js. Update this documentation by updating the source code. -->
+<h3 id="table-of-contents">Table of Contents</h3>
+<ul>
+<li><a href="#core">Core</a><ul>
+<li><a href="#addtool">addTool</a><ul>
+<li><a href="#parameters">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#addtoolforelement">addToolForElement</a><ul>
+<li><a href="#parameters-1">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#settooloptions">setToolOptions</a><ul>
+<li><a href="#parameters-2">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#settooloptions-1">setToolOptions</a><ul>
+<li><a href="#parameters-3">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#settooloptionsforelement">setToolOptionsForElement</a><ul>
+<li><a href="#parameters-4">Parameters</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#tool-modes">Tool Modes</a><ul>
+<li><a href="#settoolactiveforelement">setToolActiveForElement</a><ul>
+<li><a href="#parameters-5">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#settoolpassiveforelement">setToolPassiveForElement</a><ul>
+<li><a href="#parameters-6">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#settoolenabledforelement">setToolEnabledForElement</a><ul>
+<li><a href="#parameters-7">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#settooldisabledforelement">setToolDisabledForElement</a><ul>
+<li><a href="#parameters-8">Parameters</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#set_brush_color_map">SET_BRUSH_COLOR_MAP</a><ul>
+<li><a href="#parameters-9">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#onimagerenderedbrusheventhandler">onImageRenderedBrushEventHandler</a><ul>
+<li><a href="#parameters-10">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#_drawimagebitmap">_drawImageBitmap</a><ul>
+<li><a href="#parameters-11">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#enable">enable</a><ul>
+<li><a href="#parameters-12">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#enable-1">enable</a><ul>
+<li><a href="#parameters-13">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#mousedown">mouseDown</a><ul>
+<li><a href="#parameters-14">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#mousemove">mouseMove</a><ul>
+<li><a href="#parameters-15">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#keydown">keyDown</a><ul>
+<li><a href="#parameters-16">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#onnewimagebrusheventhandler">onNewImageBrushEventHandler</a><ul>
+<li><a href="#parameters-17">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#generateguid">generateGUID</a></li>
+<li><a href="#settoolmodeforelement">setToolModeForElement</a><ul>
+<li><a href="#parameters-18">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#settoolmode">setToolMode</a><ul>
+<li><a href="#parameters-19">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#createnewmeasurement">createNewMeasurement</a><ul>
+<li><a href="#parameters-20">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#pointneartool">pointNearTool</a><ul>
+<li><a href="#parameters-21">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#rendertooldata">renderToolData</a><ul>
+<li><a href="#parameters-22">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#addnewmeasurement">addNewMeasurement</a><ul>
+<li><a href="#parameters-23">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#createnewmeasurement-1">createNewMeasurement</a><ul>
+<li><a href="#parameters-24">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#pointneartool-1">pointNearTool</a><ul>
+<li><a href="#parameters-25">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#distancefrompoint">distanceFromPoint</a><ul>
+<li><a href="#parameters-26">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#rendertooldata-1">renderToolData</a><ul>
+<li><a href="#parameters-27">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#mousemovecallback">mouseMoveCallback</a><ul>
+<li><a href="#parameters-28">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#handleselectedcallback">handleSelectedCallback</a><ul>
+<li><a href="#parameters-29">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#toolselectedcallback">toolSelectedCallback</a><ul>
+<li><a href="#parameters-30">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#createnewmeasurement-2">createNewMeasurement</a><ul>
+<li><a href="#parameters-31">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#pointneartool-2">pointNearTool</a><ul>
+<li><a href="#parameters-32">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#rendertooldata-2">renderToolData</a><ul>
+<li><a href="#parameters-33">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#createnewmeasurement-3">createNewMeasurement</a><ul>
+<li><a href="#parameters-34">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#pointneartool-3">pointNearTool</a><ul>
+<li><a href="#parameters-35">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#rendertooldata-3">renderToolData</a><ul>
+<li><a href="#parameters-36">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#applyactivestrategy">applyActiveStrategy</a><ul>
+<li><a href="#parameters-37">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#onkeydown">onKeyDown</a><ul>
+<li><a href="#parameters-38">Parameters</a></li>
+<li><a href="#parameters-39">Parameters</a></li>
+<li><a href="#parameters-40">Parameters</a></li>
+<li><a href="#parameters-41">Parameters</a></li>
+<li><a href="#parameters-42">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#createnewmeasurement-4">createNewMeasurement</a><ul>
+<li><a href="#parameters-43">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#pointneartool-4">pointNearTool</a><ul>
+<li><a href="#parameters-44">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#distancefrompoint-1">distanceFromPoint</a><ul>
+<li><a href="#parameters-45">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#distancefrompointcanvas">distanceFromPointCanvas</a><ul>
+<li><a href="#parameters-46">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#rendertooldata-4">renderToolData</a><ul>
+<li><a href="#parameters-47">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#addnewmeasurement-1">addNewMeasurement</a><ul>
+<li><a href="#parameters-48">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#premousedowncallback">preMouseDownCallback</a><ul>
+<li><a href="#parameters-49">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#handleselectedcallback-1">handleSelectedCallback</a><ul>
+<li><a href="#parameters-50">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#_drawingmousemovecallback">_drawingMouseMoveCallback</a><ul>
+<li><a href="#parameters-51">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#_drawingmousedowncallback">_drawingMouseDownCallback</a><ul>
+<li><a href="#parameters-52">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#_editmousedragcallback">_editMouseDragCallback</a><ul>
+<li><a href="#parameters-53">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#_editmouseupcallback">_editMouseUpCallback</a><ul>
+<li><a href="#parameters-54">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#_drophandle">_dropHandle</a><ul>
+<li><a href="#parameters-55">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#_checkhandlespolygonmode">_checkHandlesPolygonMode</a><ul>
+<li><a href="#parameters-56">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#insertordelete">insertOrDelete</a><ul>
+<li><a href="#parameters-57">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#deletepoint">deletePoint</a><ul>
+<li><a href="#parameters-58">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#insertpoint">insertPoint</a><ul>
+<li><a href="#parameters-59">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#getinsertionindex">getInsertionIndex</a><ul>
+<li><a href="#parameters-60">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#constructor">constructor</a><ul>
+<li><a href="#parameters-61">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#findline">findLine</a></li>
+<li><a href="#findtool">findTool</a></li>
+<li><a href="#_nearesthandletopointalltools">_nearestHandleToPointAllTools</a></li>
+<li><a href="#_nearesthandletopoint">_nearestHandleToPoint</a><ul>
+<li><a href="#parameters-62">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#_getcloselinesintool">_getCloseLinesInTool</a><ul>
+<li><a href="#parameters-63">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#_findcorrectline">_findCorrectLine</a><ul>
+<li><a href="#parameters-64">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#_pointprojectstolinesegment">_pointProjectsToLineSegment</a><ul>
+<li><a href="#parameters-65">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#_getlineorigintomouseasvector">_getLineOriginToMouseAsVector</a><ul>
+<li><a href="#parameters-66">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#_distanceofpointfromline">_distanceOfPointfromLine</a><ul>
+<li><a href="#parameters-67">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#getcanvaspointsfromhandles">getCanvasPointsFromHandles</a><ul>
+<li><a href="#parameters-68">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#getlineasvector">getLineAsVector</a><ul>
+<li><a href="#parameters-69">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#getnexthandleindex">getNextHandleIndex</a><ul>
+<li><a href="#parameters-70">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#clickedlinedata">ClickedLineData</a><ul>
+<li><a href="#properties">Properties</a></li>
+</ul>
+</li>
+<li><a href="#freehandarea">freehandArea</a><ul>
+<li><a href="#parameters-71">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#calculatefreehandstatistics">calculateFreehandStatistics</a><ul>
+<li><a href="#parameters-72">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#getsum">getSum</a><ul>
+<li><a href="#parameters-73">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#sumpointifinfreehand">sumPointIfInFreehand</a><ul>
+<li><a href="#parameters-74">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#pointinfreehand">pointInFreehand</a><ul>
+<li><a href="#parameters-75">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#isenclosedy">isEnclosedY</a><ul>
+<li><a href="#parameters-76">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#islinerightofpoint">isLineRightOfPoint</a><ul>
+<li><a href="#parameters-77">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#linesegmentatpoint">lineSegmentAtPoint</a><ul>
+<li><a href="#parameters-78">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#rayfrompointcrosssesline">rayFromPointCrosssesLine</a><ul>
+<li><a href="#parameters-79">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#newhandle">newHandle</a><ul>
+<li><a href="#parameters-80">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#newhandle-1">newHandle</a><ul>
+<li><a href="#parameters-81">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#end">end</a><ul>
+<li><a href="#parameters-82">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#modify">modify</a><ul>
+<li><a href="#parameters-83">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#doesintersectotherlines">doesIntersectOtherLines</a><ul>
+<li><a href="#parameters-84">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#doesintersect">doesIntersect</a><ul>
+<li><a href="#parameters-85">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#orientation">orientation</a><ul>
+<li><a href="#parameters-86">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#onsegment">onSegment</a><ul>
+<li><a href="#parameters-87">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#freehandhandledata">FreehandHandleData</a><ul>
+<li><a href="#properties-1">Properties</a></li>
+</ul>
+</li>
+<li><a href="#rendertooldata-5">renderToolData</a><ul>
+<li><a href="#parameters-88">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#premousedowncallback-1">preMouseDownCallback</a><ul>
+<li><a href="#parameters-89">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#activemousedragcallback">activeMouseDragCallback</a><ul>
+<li><a href="#parameters-90">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#activemouseupcallback">activeMouseUpCallback</a><ul>
+<li><a href="#parameters-91">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#newimagecallback">newImageCallback</a><ul>
+<li><a href="#parameters-92">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#enabledcallback">enabledCallback</a><ul>
+<li><a href="#parameters-93">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#passivecallback">passiveCallback</a><ul>
+<li><a href="#parameters-94">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#disabledcallback">disabledCallback</a><ul>
+<li><a href="#parameters-95">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#getdefaultfreehandsculptermousetoolconfiguration">getDefaultFreehandSculpterMouseToolConfiguration</a></li>
+<li><a href="#changetextcallback">changeTextCallback</a><ul>
+<li><a href="#parameters-96">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#createnewmeasurement-5">createNewMeasurement</a><ul>
+<li><a href="#parameters-97">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#pointneartool-5">pointNearTool</a><ul>
+<li><a href="#parameters-98">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#rendertooldata-6">renderToolData</a><ul>
+<li><a href="#parameters-99">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#_drawzoomedelement">_drawZoomedElement</a><ul>
+<li><a href="#parameters-100">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#_removezoomelement">_removeZoomElement</a></li>
+<li><a href="#_createmagnificationcanvas">_createMagnificationCanvas</a><ul>
+<li><a href="#parameters-101">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#_destroymagnificationcanvas">_destroyMagnificationCanvas</a><ul>
+<li><a href="#parameters-102">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#createnewmeasurement-6">createNewMeasurement</a><ul>
+<li><a href="#parameters-103">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#pointneartool-6">pointNearTool</a><ul>
+<li><a href="#parameters-104">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#rendertooldata-7">renderToolData</a><ul>
+<li><a href="#parameters-105">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#createnewmeasurement-7">createNewMeasurement</a><ul>
+<li><a href="#parameters-106">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#pointneartool-7">pointNearTool</a><ul>
+<li><a href="#parameters-107">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#rendertooldata-8">renderToolData</a><ul>
+<li><a href="#parameters-108">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#anglebetweenpoints">angleBetweenPoints</a><ul>
+<li><a href="#parameters-109">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#computescalebounds">computeScaleBounds</a><ul>
+<li><a href="#parameters-110">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#drawverticalscalebarintervals">drawVerticalScalebarIntervals</a><ul>
+<li><a href="#parameters-111">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#basiclevelingstrategy">basicLevelingStrategy</a><ul>
+<li><a href="#parameters-112">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#_startoutliningregion">_startOutliningRegion</a><ul>
+<li><a href="#parameters-113">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#_sethandlesandupdate">_setHandlesAndUpdate</a><ul>
+<li><a href="#parameters-114">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#_applystrategy">_applyStrategy</a><ul>
+<li><a href="#parameters-115">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#_resethandles">_resetHandles</a></li>
+<li><a href="#isemptyobject">isEmptyObject</a><ul>
+<li><a href="#parameters-116">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#applywwwcregion">applyWWWCRegion</a><ul>
+<li><a href="#parameters-117">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#calculateminmaxmean">calculateMinMaxMean</a><ul>
+<li><a href="#parameters-118">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#defaultstrategy">defaultStrategy</a><ul>
+<li><a href="#parameters-119">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#touchpinchcallback">touchPinchCallback</a><ul>
+<li><a href="#parameters-120">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#mousewheelcallback">mouseWheelCallback</a><ul>
+<li><a href="#parameters-121">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#converttovector3">convertToVector3</a><ul>
+<li><a href="#parameters-122">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#renderbrush">renderBrush</a><ul>
+<li><a href="#parameters-123">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#renderbrush-1">renderBrush</a><ul>
+<li><a href="#parameters-124">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#_paint">_paint</a><ul>
+<li><a href="#parameters-125">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#mousedragcallback">mouseDragCallback</a><ul>
+<li><a href="#parameters-126">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#premousedowncallback-2">preMouseDownCallback</a><ul>
+<li><a href="#parameters-127">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#_startpainting">_startPainting</a><ul>
+<li><a href="#parameters-128">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#mousemovecallback-1">mouseMoveCallback</a><ul>
+<li><a href="#parameters-129">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#passivecallback-1">passiveCallback</a><ul>
+<li><a href="#parameters-130">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#rendertooldata-9">renderToolData</a><ul>
+<li><a href="#parameters-131">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#nextsegmentation">nextSegmentation</a></li>
+<li><a href="#previoussegmentation">previousSegmentation</a></li>
+<li><a href="#increasebrushsize">increaseBrushSize</a></li>
+<li><a href="#decreasebrushsize">decreaseBrushSize</a></li>
+<li><a href="#_getbrushcolor">_getBrushColor</a><ul>
+<li><a href="#parameters-132">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#_drawingmouseupcallback">_drawingMouseUpCallback</a><ul>
+<li><a href="#parameters-133">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#_startlisteningformouseup">_startListeningForMouseUp</a><ul>
+<li><a href="#parameters-134">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#_stoplisteningformouseup">_stopListeningForMouseUp</a><ul>
+<li><a href="#parameters-135">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#showsegmentationonelement">showSegmentationOnElement</a><ul>
+<li><a href="#parameters-136">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#hidesegmentationonelement">hideSegmentationOnElement</a><ul>
+<li><a href="#parameters-137">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#showallsegmentationsonelement">showAllSegmentationsOnElement</a></li>
+<li><a href="#hideallsegmentationsonelement">hideAllSegmentationsOnElement</a></li>
+<li><a href="#getnumberofcolors">getNumberOfColors</a></li>
+<li><a href="#getreferencedtooldataname">getReferencedToolDataName</a></li>
+<li><a href="#keypress">keyPress</a><ul>
+<li><a href="#parameters-138">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#setcontexttodisplayfontsize">setContextToDisplayFontSize</a><ul>
+<li><a href="#parameters-139">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#triggerevent">triggerEvent</a><ul>
+<li><a href="#parameters-140">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#makeunselectable">makeUnselectable</a><ul>
+<li><a href="#parameters-141">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#drawcircle">drawCircle</a><ul>
+<li><a href="#parameters-142">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#drawcircle-1">drawCircle</a><ul>
+<li><a href="#parameters-143">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#getplaycliptimeouts">getPlayClipTimeouts</a><ul>
+<li><a href="#parameters-144">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#stopclipwithdata">stopClipWithData</a><ul>
+<li><a href="#parameters-145">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#triggerstopevent">triggerStopEvent</a><ul>
+<li><a href="#parameters-146">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#playclip">playClip</a><ul>
+<li><a href="#parameters-147">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#stopclip">stopClip</a><ul>
+<li><a href="#parameters-148">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#gettooloptions">getToolOptions</a><ul>
+<li><a href="#parameters-149">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#cleartooloptions">clearToolOptions</a><ul>
+<li><a href="#parameters-150">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#cleartooloptionsbytooltype">clearToolOptionsByToolType</a><ul>
+<li><a href="#parameters-151">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#cleartooloptionsbyelement">clearToolOptionsByElement</a><ul>
+<li><a href="#parameters-152">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#getnewcontext">getNewContext</a><ul>
+<li><a href="#parameters-153">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#contextfn">ContextFn</a><ul>
+<li><a href="#parameters-154">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#strokestyle">StrokeStyle</a></li>
+<li><a href="#fillstyle">FillStyle</a></li>
+<li><a href="#draw">draw</a><ul>
+<li><a href="#parameters-155">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#path">path</a><ul>
+<li><a href="#parameters-156">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#setshadow">setShadow</a><ul>
+<li><a href="#parameters-157">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#drawline">drawLine</a><ul>
+<li><a href="#parameters-158">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#drawlines">drawLines</a><ul>
+<li><a href="#parameters-159">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#drawjoinedlines">drawJoinedLines</a><ul>
+<li><a href="#parameters-160">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#drawellipse">drawEllipse</a><ul>
+<li><a href="#parameters-161">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#drawrect">drawRect</a><ul>
+<li><a href="#parameters-162">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#fillbox">fillBox</a><ul>
+<li><a href="#parameters-163">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#filltextlines">fillTextLines</a><ul>
+<li><a href="#parameters-164">Parameters</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="core">Core</h2>
+<p>This section needs a description</p>
+<h3 id="addtool">addTool</h3>
+<h4 id="parameters">Parameters</h4>
+<ul>
+<li><code>apiTool</code>  </li>
+<li><code>tool</code> <strong>baseTool</strong> </li>
+</ul>
+<h3 id="addtoolforelement">addToolForElement</h3>
+<h4 id="parameters">Parameters</h4>
+<ul>
+<li><code>element</code> <strong>any</strong> </li>
+<li><code>apiTool</code>  </li>
+<li><code>tool</code> <strong>baseTool</strong> </li>
+</ul>
+<h3 id="settooloptions">setToolOptions</h3>
+<h4 id="parameters">Parameters</h4>
+<ul>
+<li><code>toolName</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">string</a></strong> </li>
+<li><code>options</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> </li>
+</ul>
+<h3 id="settooloptions">setToolOptions</h3>
+<p>Set the options object associated with a particular toolType and element</p>
+<h4 id="parameters">Parameters</h4>
+<ul>
+<li><code>toolType</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">string</a></strong> Tool type identifier of the target options object</li>
+<li><code>element</code> <strong><a href="https://developer.mozilla.org/docs/Web/HTML/Element" target="_blank">HTMLElement</a></strong> Element of the target options object</li>
+<li><code>options</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> Options object to store at target</li>
+</ul>
+<p>Returns <strong>void</strong> </p>
+<h3 id="settooloptionsforelement">setToolOptionsForElement</h3>
+<h4 id="parameters">Parameters</h4>
+<ul>
+<li><code>element</code> <strong>any</strong> </li>
+<li><code>toolName</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">string</a></strong> </li>
+<li><code>options</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> </li>
+</ul>
+<h2 id="tool-modes">Tool Modes</h2>
+<p>This section needs a description</p>
+<h3 id="settoolactiveforelement">setToolActiveForElement</h3>
+<p>Sets a tool&apos;s state to &apos;active&apos;. Active tools are rendered,
+respond to user input, and can create new data</p>
+<h4 id="parameters">Parameters</h4>
+<ul>
+<li><code>element</code> <strong>any</strong> </li>
+<li><code>toolName</code> <strong>any</strong> </li>
+<li><code>options</code> <strong>any</strong> </li>
+</ul>
+<h3 id="settoolpassiveforelement">setToolPassiveForElement</h3>
+<p>Sets a tool&apos;s state to &apos;passive&apos;. Passive tools are rendered and respond to user input,
+but do not create new measurements or annotations.</p>
+<h4 id="parameters">Parameters</h4>
+<ul>
+<li><code>element</code> <strong>any</strong> </li>
+<li><code>toolName</code> <strong>any</strong> </li>
+<li><code>options</code> <strong>any</strong> </li>
+</ul>
+<h3 id="settoolenabledforelement">setToolEnabledForElement</h3>
+<p>Sets a tool&apos;s state to &apos;enabled&apos;. Enabled tools are rendered,
+but do not respond to user input</p>
+<h4 id="parameters">Parameters</h4>
+<ul>
+<li><code>element</code> <strong>any</strong> </li>
+<li><code>toolName</code> <strong>any</strong> </li>
+<li><code>options</code> <strong>any</strong> </li>
+</ul>
+<h3 id="settooldisabledforelement">setToolDisabledForElement</h3>
+<p>Sets a tool&apos;s state to &apos;disabled&apos;. Disabled tools are not rendered,
+and do not respond to user input</p>
+<h4 id="parameters">Parameters</h4>
+<ul>
+<li><code>element</code> <strong>any</strong> </li>
+<li><code>toolName</code> <strong>any</strong> </li>
+<li><code>options</code> <strong>any</strong> </li>
+</ul>
+<h2 id="setbrushcolormap">SET_BRUSH_COLOR_MAP</h2>
+<p>Sets the brush color map to something other than the default</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>colors</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank">Array</a></strong> An array of 4D [red, green, blue, alpha] arrays.</li>
+</ul>
+<h2 id="onimagerenderedbrusheventhandler">onImageRenderedBrushEventHandler</h2>
+<p>Used to redraw the brush label map data per render.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The event.</li>
+</ul>
+<h2 id="drawimagebitmap">_drawImageBitmap</h2>
+<p>Draws the ImageBitmap the canvas.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> description</li>
+<li><code>imageBitmap</code>  </li>
+<li><code>alwaysVisible</code>  </li>
+</ul>
+<h2 id="enable">enable</h2>
+<p>These listeners are emitted in order, and can be cancelled/prevented from bubbling
+by any previous event.</p>
+<ul>
+<li>mouseMove: used to update the [un]hover state of a tool (highlighting)</li>
+<li>mouseDown: check to see if we are close to an existing annotation, grab it</li>
+<li>mouseDownActivate: createNewMeasurement (usually)</li>
+<li>mouseDrag: update measurement or apply strategy (wwwc)</li>
+<li>mouseDoubleClick: usually a one-time apply specialty action</li>
+<li>onImageRendered: redraw visible tool data</li>
+</ul>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>element</code> <strong>any</strong> </li>
+</ul>
+<h2 id="enable">enable</h2>
+<p>These listeners are emitted in order, and can be cancelled/prevented from bubbling
+by any previous event.</p>
+<ul>
+<li>tap:</li>
+<li>touchStart: check to see if we are close to an existing annotation, grab it</li>
+<li>touchDrag:</li>
+<li>touchStartActive: createNewMeasurement (usually)</li>
+<li>touchPress:</li>
+<li>touchRotate:</li>
+<li>doubleTap: usually a one-time apply specialty action</li>
+<li>touchPinch:</li>
+<li>onImageRendered: redraw visible tool data</li>
+</ul>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>element</code> <strong>any</strong> </li>
+</ul>
+<h2 id="mousedown">mouseDown</h2>
+<p>MouseDown is called before MouseDownActivate. If MouseDown
+finds an existing tool to interact with, it can prevent the
+event from bubbling to MouseDownActivate.</p>
+<p>TODO: Set that a tool is active to prevent multiple event fires
+TODO: Handles should trigger image update when released
+TODO: Handles should handle deleting out of bound data by setting</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong>any</strong> </li>
+</ul>
+<h2 id="mousemove">mouseMove</h2>
+<p>This is mostly used to update the [un]hover state
+of a tool.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong>any</strong> </li>
+</ul>
+<h2 id="keydown">keyDown</h2>
+<p>KeyDown is used for keyboard input for mouse tools.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> </li>
+</ul>
+<h2 id="onnewimagebrusheventhandler">onNewImageBrushEventHandler</h2>
+<p>Clears the brush imageBitmapCache,
+invaldates the data and calls for a re-render.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The event.</li>
+</ul>
+<h2 id="generateguid">generateGUID</h2>
+<p>Generates a UUID for the enabledElement.</p>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">String</a></strong> the UUID.</p>
+<h2 id="settoolmodeforelement">setToolModeForElement</h2>
+<p>An internal method that helps make sure we change tool state in a consistent
+way</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>mode</code> <strong>any</strong> </li>
+<li><code>changeEvent</code> <strong>any</strong> </li>
+<li><code>element</code> <strong>any</strong> </li>
+<li><code>toolName</code> <strong>any</strong> </li>
+<li><code>options</code> <strong>any</strong> </li>
+</ul>
+<h2 id="settoolmode">setToolMode</h2>
+<p>A helper/quick way to set a tool&apos;s mode for all canvases</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>mode</code> <strong>any</strong> </li>
+<li><code>changeEvent</code> <strong>any</strong> </li>
+<li><code>toolName</code> <strong>any</strong> </li>
+<li><code>options</code> <strong>any</strong> </li>
+</ul>
+<h2 id="createnewmeasurement">createNewMeasurement</h2>
+<p>Create the measurement data for this tool with the end handle activated</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong>any</strong> </li>
+</ul>
+<h2 id="pointneartool">pointNearTool</h2>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>element</code> <strong>any</strong> </li>
+<li><code>data</code> <strong>any</strong> </li>
+<li><code>coords</code> <strong>any</strong> </li>
+</ul>
+<h2 id="rendertooldata">renderToolData</h2>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong>any</strong> </li>
+</ul>
+<h2 id="addnewmeasurement">addNewMeasurement</h2>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong>any</strong> </li>
+<li><code>interactionType</code> <strong>any</strong> </li>
+</ul>
+<h2 id="createnewmeasurement">createNewMeasurement</h2>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong>type</strong> description</li>
+</ul>
+<p>Returns <strong>type</strong> description</p>
+<h2 id="pointneartool">pointNearTool</h2>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>element</code> <strong>any</strong> </li>
+<li><code>data</code> <strong>any</strong> </li>
+<li><code>coords</code> <strong>any</strong> </li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank">boolean</a></strong> If the point is near the tool</p>
+<h2 id="distancefrompoint">distanceFromPoint</h2>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>element</code> <strong>any</strong> </li>
+<li><code>data</code> <strong>any</strong> </li>
+<li><code>coords</code> <strong>any</strong> </li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank">number</a></strong> the distance in px from the provided coordinates to the
+closest rendered portion of the annotation. -1 if the distance cannot be
+calculated.</p>
+<h2 id="rendertooldata">renderToolData</h2>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong>any</strong> </li>
+</ul>
+<h2 id="mousemovecallback">mouseMoveCallback</h2>
+<p>Event handler for MOUSE_MOVE event.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The event.</li>
+</ul>
+<h2 id="handleselectedcallback">handleSelectedCallback</h2>
+<p>Custom callback for when a handle is selected.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong>any</strong> </li>
+<li><code>handle</code> <strong>any</strong> The selected handle.</li>
+<li><code>data</code>  </li>
+</ul>
+<h2 id="toolselectedcallback">toolSelectedCallback</h2>
+<p>Custom callback for when a tool is selected.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong>any</strong> </li>
+<li><code>data</code>  </li>
+<li><code>toolState</code>  </li>
+<li><code>tool</code> <strong>any</strong> The selected tool.</li>
+</ul>
+<h2 id="createnewmeasurement">createNewMeasurement</h2>
+<p>Create the measurement data for this tool with the end handle activated</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>eventData</code> <strong>any</strong> </li>
+</ul>
+<h2 id="pointneartool">pointNearTool</h2>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>element</code> <strong>any</strong> </li>
+<li><code>data</code> <strong>any</strong> </li>
+<li><code>coords</code> <strong>any</strong> </li>
+</ul>
+<h2 id="rendertooldata">renderToolData</h2>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong>any</strong> </li>
+</ul>
+<h2 id="createnewmeasurement">createNewMeasurement</h2>
+<p>Create the measurement data for this tool with the end handle activated</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>eventData</code> <strong>any</strong> </li>
+</ul>
+<h2 id="pointneartool">pointNearTool</h2>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>element</code> <strong>any</strong> </li>
+<li><code>data</code> <strong>any</strong> </li>
+<li><code>coords</code> <strong>any</strong> </li>
+</ul>
+<h2 id="rendertooldata">renderToolData</h2>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong>any</strong> </li>
+</ul>
+<h2 id="applyactivestrategy">applyActiveStrategy</h2>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong>any</strong> </li>
+</ul>
+<p>Returns <strong>any</strong> Any</p>
+<h2 id="onkeydown">onKeyDown</h2>
+<p>Event handler for KEY_DOWN event.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The event.</li>
+</ul>
+<h2 id=""> </h2>
+<p>Example implementation:</p>
+<p>postMouseDownCallback(evt) {
+   return false;
+}</p>
+<h2 id=""> </h2>
+<p>Callback that takes priority if the tool is active, in case
+any special behavior is required. Does nothing by default.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong>type</strong> </li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank">boolean</a></strong> consumedEvent - True if function consumed the event.</p>
+<h2 id=""> </h2>
+<p>Example implementation:</p>
+<p>preMouseDownCallback(evt) {
+   return false;
+}</p>
+<h2 id=""> </h2>
+<p>Callback that takes priority if the tool is active, in case
+any special behavior is required. Does nothing by default.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong>type</strong> </li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank">boolean</a></strong> consumedEvent - True if function consumed the event.</p>
+<h2 id=""> </h2>
+<p>Example implementation:</p>
+<p>postTouchStartCallback(evt) {
+   return false;
+}</p>
+<h2 id=""> </h2>
+<p>Callback that takes priority if the tool is active, in case
+any special behavior is required. Does nothing by default.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong>type</strong> </li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank">boolean</a></strong> consumedEvent - True if function consumed the event.</p>
+<h2 id=""> </h2>
+<p>Example implementation:</p>
+<p>preTouchStartCallback(evt) {
+   return false;
+}</p>
+<h2 id=""> </h2>
+<p>Callback that takes priority if the tool is active, in case
+any special behavior is required. Does nothing by default.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong>type</strong> </li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank">boolean</a></strong> consumedEvent - True if function consumed the event.</p>
+<h2 id="createnewmeasurement">createNewMeasurement</h2>
+<p>Create the measurement data for this tool</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>eventData</code> <strong>any</strong> </li>
+</ul>
+<h2 id="pointneartool">pointNearTool</h2>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>element</code> <strong>any</strong> </li>
+<li><code>data</code> <strong>any</strong> </li>
+<li><code>coords</code> <strong>any</strong> </li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank">Boolean</a></strong> </p>
+<h2 id="distancefrompoint">distanceFromPoint</h2>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>element</code> <strong>any</strong> </li>
+<li><code>data</code> <strong>any</strong> </li>
+<li><code>coords</code> <strong>any</strong> </li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank">number</a></strong> the distance in px from the provided coordinates to the
+closest rendered portion of the annotation. -1 if the distance cannot be
+calculated.</p>
+<h2 id="distancefrompointcanvas">distanceFromPointCanvas</h2>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>element</code> <strong>any</strong> </li>
+<li><code>data</code> <strong>any</strong> </li>
+<li><code>coords</code> <strong>any</strong> </li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank">number</a></strong> the distance in canvas units from the provided coordinates to the
+closest rendered portion of the annotation. -1 if the distance cannot be
+calculated.</p>
+<h2 id="rendertooldata">renderToolData</h2>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong>any</strong> </li>
+</ul>
+<h2 id="addnewmeasurement">addNewMeasurement</h2>
+<p>Event handler for called by the mouseDownActivate event, if tool is active and
+the event is not caught by mouseDownCallback.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The event.</li>
+<li><code>interactionType</code>  </li>
+</ul>
+<h2 id="premousedowncallback">preMouseDownCallback</h2>
+<p>Active mouse down callback that takes priority if the user is attempting
+to insert or delete a handle with ctrl + click.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The event.</li>
+</ul>
+<h2 id="handleselectedcallback">handleSelectedCallback</h2>
+<p>Custom callback for when a handle is selected.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> </li>
+<li><code>handle</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The selected handle.</li>
+<li><code>data</code>  </li>
+</ul>
+<h2 id="drawingmousemovecallback">_drawingMouseMoveCallback</h2>
+<p>Event handler for MOUSE_MOVE during drawing event loop.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The event.</li>
+</ul>
+<h2 id="drawingmousedowncallback">_drawingMouseDownCallback</h2>
+<p>Event handler for MOUSE_DOWN during drawing event loop.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The event.</li>
+</ul>
+<h2 id="editmousedragcallback">_editMouseDragCallback</h2>
+<p>Event handler for MOUSE_DRAG during handle drag event loop.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The event.</li>
+</ul>
+<h2 id="editmouseupcallback">_editMouseUpCallback</h2>
+<p>Event handler for MOUSE_UP during handle drag event loop.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The event.</li>
+</ul>
+<h2 id="drophandle">_dropHandle</h2>
+<p>Places a handle of the freehand tool if the new location is valid.
+If the new location is invalid the handle snaps back to its previous position.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>eventData</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> Data object associated with the event.</li>
+<li><code>toolState</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The data associated with the freehand tool.</li>
+</ul>
+<h2 id="checkhandlespolygonmode">_checkHandlesPolygonMode</h2>
+<p>Returns true if the proposed location of a new handle is invalid (in polygon mode).</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>data</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> data object associated with the tool.</li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank">Boolean</a></strong> </p>
+<h2 id="insertordelete">insertOrDelete</h2>
+<p>Inserts or deletes a point from a freehand tool.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code>  </li>
+<li><code>nearby</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> Object containing information about a nearby handle.</li>
+<li><code>e</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The event.</li>
+</ul>
+<h2 id="deletepoint">deletePoint</h2>
+<p>Deletes a point from a freehand tool.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>eventData</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The data object associated with the event.</li>
+<li><code>deleteInfo</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> Object containing information about which point to delete.</li>
+</ul>
+<h2 id="insertpoint">insertPoint</h2>
+<p>Inserts a new point into a freehand tool.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>eventData</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The data object associated with the event.</li>
+<li><code>insertInfo</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> Object containing information about where to insert the point.</li>
+</ul>
+<h2 id="getinsertionindex">getInsertionIndex</h2>
+<p>Gets the handle index of a tool in which to insert the new point.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>insertInfo</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> Object containing information about where to insert the point.</li>
+</ul>
+<h2 id="constructor">constructor</h2>
+<p>Constructs a linefinder with the eventdata</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>eventData</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> Data object associated with the event.</li>
+</ul>
+<h2 id="findline">findLine</h2>
+<p>Looks for lines near the mouse cursor.</p>
+<p>Returns <strong><a href="#clickedlinedata">ClickedLineData</a></strong> </p>
+<h2 id="findtool">findTool</h2>
+<p>Looks for tools near the mouse cursor.</p>
+<p>Returns <strong><a href="#clickedlinedata">ClickedLineData</a></strong> </p>
+<h2 id="nearesthandletopointalltools">_nearestHandleToPointAllTools</h2>
+<p>Finds the nearest handle to the mouse cursor for all tools.</p>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> closestHandle - The handle closest to the point.</p>
+<h2 id="nearesthandletopoint">_nearestHandleToPoint</h2>
+<p>Finds the nearest handle to the mouse cursor for a specific tool.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>toolIndex</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank">Number</a></strong> The index of the particular freehand tool.</li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> An object containing information about the closest handle.</p>
+<h2 id="getcloselinesintool">_getCloseLinesInTool</h2>
+<p>Finds all the lines close to the mouse point for a particular tool.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>toolIndex</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank">Number</a></strong> The index of the particular freehand tool.</li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> An array of lines close to the mouse point.</p>
+<h2 id="findcorrectline">_findCorrectLine</h2>
+<p>Finds the line the user clicked on from an array of close lines.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>toolIndex</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank">Number</a></strong> The index of the particular freehand tool.</li>
+<li><code>closeLines</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> An array of lines close to the mouse point.</li>
+</ul>
+<p>Returns <strong>(<a href="#clickedlinedata">ClickedLineData</a> | null)</strong> An instance of ClickedLineData containing information about the line, or null if no line is correct.</p>
+<h2 id="pointprojectstolinesegment">_pointProjectsToLineSegment</h2>
+<p>Returns true if the mouse point projects onto the line segment.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>toolIndex</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank">Number</a></strong> The index of the particular freehand tool.</li>
+<li><code>handleIndexArray</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> An array of indicies corresponding to the line segment.</li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank">Boolean</a></strong> True if the mouse point projects onto the line segment</p>
+<h2 id="getlineorigintomouseasvector">_getLineOriginToMouseAsVector</h2>
+<p>Constructs a vector from the direction and magnitude of the line from the the line origin to the mouse cursor.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>p</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> An array of two points respresenting the line segment.</li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> An array containing the x and y components of the vector.</p>
+<h2 id="distanceofpointfromline">_distanceOfPointfromLine</h2>
+<p>Calculates the perpendicular distance of the mouse cursor from a line segment.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>handle1</code> <strong><a href="#freehandhandledata">FreehandHandleData</a></strong> The first handle.</li>
+<li><code>handle2</code> <strong><a href="#freehandhandledata">FreehandHandleData</a></strong> The first handle.</li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank">Number</a></strong> The perpendicular distance of the mouse cursor from the line segment.</p>
+<h2 id="getcanvaspointsfromhandles">getCanvasPointsFromHandles</h2>
+<p>Returns the canvas positions from the handle&apos;s pixel positions.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>handle1</code> <strong><a href="#freehandhandledata">FreehandHandleData</a></strong> The first handle.</li>
+<li><code>handle2</code> <strong><a href="#freehandhandledata">FreehandHandleData</a></strong> The second handle.</li>
+<li><code>element</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The element on which the handles reside.</li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> An array contsining the handle positions in canvas coordinates.</p>
+<h2 id="getlineasvector">getLineAsVector</h2>
+<p>Converts a line segment to a vector.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>p</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> An array of two points respresenting the line segment.</li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> An array containing the x and y components of the vector, as well as a magnitude property.</p>
+<h2 id="getnexthandleindex">getNextHandleIndex</h2>
+<p>Gets the next handl index from a cyclical array of points.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>currentIndex</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank">Number</a></strong> The current index.</li>
+<li><code>length</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank">Number</a></strong> The number of handles in the polygon.</li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank">Number</a></strong> The index of the next handle.</p>
+<h2 id="clickedlinedata">ClickedLineData</h2>
+<p>Type: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></p>
+<h3 id="properties">Properties</h3>
+<ul>
+<li><code>toolIndex</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank">Number</a></strong> ID of the tool that the line corresponds to.</li>
+<li><code>handleIndexArray</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> An array of the handle indicies that correspond to the line segment.</li>
+</ul>
+<h2 id="freehandarea">freehandArea</h2>
+<p>Calculates the area of a freehand tool polygon.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>dataHandles</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> data object associated with the tool.</li>
+<li><code>scaling</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> Area scaling of image.</li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank">Number</a></strong> The area of the polygon.</p>
+<h2 id="calculatefreehandstatistics">calculateFreehandStatistics</h2>
+<p>Calculates the statistics of all the points within the freehand object.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>sp</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> An array of the pixel data.</li>
+<li><code>boundingBox</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> Rectangular box enclosing the polygon.</li>
+<li><code>dataHandles</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> Data object associated with the tool.</li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> statisticsObj - Object containing the derived statistics.</p>
+<h2 id="getsum">getSum</h2>
+<p>Calculates the sum, squared sum and count of all pixels within the polygon.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>sp</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> An array of the pixel data.</li>
+<li><code>boundingBox</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> Rectangular box enclosing the polygon.</li>
+<li><code>dataHandles</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> Data object associated with the tool.</li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> sum - Object containing the sum, squared sum and pixel count.</p>
+<h2 id="sumpointifinfreehand">sumPointIfInFreehand</h2>
+<p>Adds the pixel to the workingSum if it is within the polygon.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>dataHandles</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> Data object associated with the tool.</li>
+<li><code>point</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The pixel coordinates.</li>
+<li><code>workingSum</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The working sum, squared sum and pixel count.</li>
+<li><code>pixelValue</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The pixel value.</li>
+</ul>
+<h2 id="pointinfreehand">pointInFreehand</h2>
+<p>Calculates if &quot;point&quot; is inside the polygon defined by dataHandles by counting
+the number of times a ray originating from &quot;point&quot; crosses the edges of the
+polygon. Odd === inside, Even === outside. The bool &quot;inROI&quot; flips every time
+the ray originating from location and pointing to the right crosses a
+linesegment.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>dataHandles</code>  </li>
+<li><code>location</code>  </li>
+</ul>
+<h2 id="isenclosedy">isEnclosedY</h2>
+<p>Returns true if the y-position yp is enclosed within y-positions y1 and y2.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>yp</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank">Number</a></strong> The y position of point p.</li>
+<li><code>y1</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank">Number</a></strong> The y position of point 1.</li>
+<li><code>y2</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank">Number</a></strong> The y position of point 2.</li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank">Boolean</a></strong> True if the y-position yp is enclosed within y-positions y1 and y2.</p>
+<h2 id="islinerightofpoint">isLineRightOfPoint</h2>
+<p>Returns true if the line segment is to the right of the point.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>point</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The point being queried.</li>
+<li><code>lp1</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The first point of the line segment.</li>
+<li><code>lp2</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The second point of the line segment.</li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank">Boolean</a></strong> True if the line is to the right of the point.</p>
+<h2 id="linesegmentatpoint">lineSegmentAtPoint</h2>
+<p>Returns the y value of the line segment at the x value of the point.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>point</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The point being queried.</li>
+<li><code>lp1</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The first point of the line segment.</li>
+<li><code>lp2</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The second point of the line segment.</li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> An object containing the y value as well as the gradient of the line segment.</p>
+<h2 id="rayfrompointcrosssesline">rayFromPointCrosssesLine</h2>
+<p>Returns true if a rightwards ray originating from the point crosses the line defined by handleI and handleJ.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>point</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The point being queried.</li>
+<li><code>handleI</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The first handle of the line segment.</li>
+<li><code>handleJ</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The second handle of the line segment.</li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank">Boolean</a></strong> True if a rightwards ray originating from the point crosses the line defined by handleI and handleJ.</p>
+<h2 id="newhandle">newHandle</h2>
+<p>Orientation algoritm to determine if two lines cross.
+Credit and details: geeksforgeeks.org/check-if-two-given-line-segments-intersect/</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>candidateHandle</code>  </li>
+<li><code>dataHandles</code>  </li>
+</ul>
+<h2 id="newhandle">newHandle</h2>
+<p>Determines whether a new handle causes an intersection of the lines of the polygon.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>candidateHandle</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The new handle to check.</li>
+<li><code>dataHandles</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> data object associated with the tool.</li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank">Boolean</a></strong> Whether the new line intersects with any other lines of the polygon.</p>
+<h2 id="end">end</h2>
+<p>Checks if the last line of a polygon will intersect the other lines of the polgyon.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>dataHandles</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> data object associated with the tool.</li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank">Boolean</a></strong> Whether the last line intersects with any other lines of the polygon.</p>
+<h2 id="modify">modify</h2>
+<p>Checks whether the modification of a handle&apos;s position causes intersection of the lines of the polygon</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>dataHandles</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> data object associated with the tool.</li>
+<li><code>modifiedHandleId</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank">Number</a></strong> The id of the handle being modified.</li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank">Boolean</a></strong> Whether the modfication causes any intersections.</p>
+<h2 id="doesintersectotherlines">doesIntersectOtherLines</h2>
+<p>Checks whether the line (p1,q1) intersects any of the other lines in the polygon.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>dataHandles</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> data object associated with the tool.</li>
+<li><code>p1</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> Coordinates of the start of the line.</li>
+<li><code>q1</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> Coordinates of the end of the line.</li>
+<li><code>ignoredHandleIds</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> Ids of handles to ignore (i.e. lines that share a vertex with the line being tested).</li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank">Boolean</a></strong> Whether the line intersects any of the other lines in the polygon.</p>
+<h2 id="doesintersect">doesIntersect</h2>
+<p>Checks whether the line (p1,q1) intersects the line (p2,q2) via an orientation algorithm.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>p1</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> Coordinates of the start of the line 2.</li>
+<li><code>q1</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> Coordinates of the end of the line 2.</li>
+<li><code>p2</code>  </li>
+<li><code>q2</code>  </li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank">Boolean</a></strong> Whether lines (p1,q1) and (p2,q2) intersect.</p>
+<h2 id="orientation">orientation</h2>
+<p>Checks the orientation of 3 points.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>p</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> First point.</li>
+<li><code>q</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> Second point.</li>
+<li><code>r</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> Third point.</li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank">Number</a></strong> 0: Colinear, 1: Clockwise, 2: Anticlockwise</p>
+<h2 id="onsegment">onSegment</h2>
+<p>Checks if point q lines on the segment (p,r).</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>p</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> Point p.</li>
+<li><code>q</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> Point q.</li>
+<li><code>r</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> Point r.</li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank">Boolean</a></strong> If q lies on line segment (p,r).</p>
+<h2 id="freehandhandledata">FreehandHandleData</h2>
+<p>Type: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></p>
+<h3 id="properties">Properties</h3>
+<ul>
+<li><code>x</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank">Number</a></strong> The x position.</li>
+<li><code>y</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank">Number</a></strong> The y position.</li>
+<li><code>highlight</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank">Boolean</a></strong> Whether the handle should be rendered as the highlighted color.</li>
+<li><code>active</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank">Boolean</a></strong> Whether the handle is active.</li>
+<li><code>lines</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> An array of lines associated with the handle.</li>
+</ul>
+<h2 id="rendertooldata">renderToolData</h2>
+<p>Event handler for IMAGE_RENDERED event.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The event.</li>
+</ul>
+<h2 id="premousedowncallback">preMouseDownCallback</h2>
+<p>Event handler for MOUSE_DOWN.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The event.</li>
+</ul>
+<h2 id="activemousedragcallback">activeMouseDragCallback</h2>
+<p>Event handler for MOUSE_DRAG during the active loop.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The event.</li>
+</ul>
+<h2 id="activemouseupcallback">activeMouseUpCallback</h2>
+<p>Event handler for MOUSE_UP during the active loop.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The event.</li>
+</ul>
+<h2 id="newimagecallback">newImageCallback</h2>
+<p>Event handler for NEW_IMAGE event.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The event.</li>
+</ul>
+<h2 id="enabledcallback">enabledCallback</h2>
+<p>Event handler for switching mode to enabled.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The event.</li>
+</ul>
+<h2 id="passivecallback">passiveCallback</h2>
+<p>Event handler for switching mode to passive.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The event.</li>
+</ul>
+<h2 id="disabledcallback">disabledCallback</h2>
+<p>Event handler for switching mode to disabled.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The event.</li>
+</ul>
+<h2 id="getdefaultfreehandsculptermousetoolconfiguration">getDefaultFreehandSculpterMouseToolConfiguration</h2>
+<p>Returns the default freehandSculpterMouseTool configuration.</p>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The default configuration object.</p>
+<h2 id="changetextcallback">changeTextCallback</h2>
+<p>This function is a callback to be overwriten in order to provide the wante feature
+modal, overlay, popup or any kind of interaction with the user to be able to update
+the text marker label.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>data</code>  </li>
+<li><code>eventData</code>  </li>
+<li><code>doneChangingTextCallback</code>  </li>
+</ul>
+<h2 id="createnewmeasurement">createNewMeasurement</h2>
+<p>Create the measurement data for this tool with the end handle activated</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>eventData</code> <strong>any</strong> </li>
+</ul>
+<h2 id="pointneartool">pointNearTool</h2>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>element</code> <strong>any</strong> </li>
+<li><code>data</code> <strong>any</strong> </li>
+<li><code>coords</code> <strong>any</strong> </li>
+</ul>
+<h2 id="rendertooldata">renderToolData</h2>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong>any</strong> </li>
+</ul>
+<h2 id="drawzoomedelement">_drawZoomedElement</h2>
+<p>Creates a cornerstone enabled element, and renders the target image at the
+desired magnification level using it.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong>any</strong> </li>
+</ul>
+<h2 id="removezoomelement">_removeZoomElement</h2>
+<p>Removes the canvas and associated enabled element that&apos;s
+used to render the zoomed image.</p>
+<h2 id="createmagnificationcanvas">_createMagnificationCanvas</h2>
+<p>The canvas used to render the zoomed image.
+It will be displayed and clipped inside the magnifying glass frame/element.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>element</code> <strong>any</strong> </li>
+</ul>
+<h2 id="destroymagnificationcanvas">_destroyMagnificationCanvas</h2>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong>any</strong> </li>
+</ul>
+<h2 id="createnewmeasurement">createNewMeasurement</h2>
+<p>Create the measurement data for this tool with the end handle activated</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>eventData</code> <strong>any</strong> </li>
+</ul>
+<h2 id="pointneartool">pointNearTool</h2>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>element</code> <strong>any</strong> </li>
+<li><code>data</code> <strong>any</strong> </li>
+<li><code>coords</code> <strong>any</strong> </li>
+</ul>
+<h2 id="rendertooldata">renderToolData</h2>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong>any</strong> </li>
+</ul>
+<h2 id="createnewmeasurement">createNewMeasurement</h2>
+<p>Create the measurement data for this tool with the end handle activated</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>eventData</code> <strong>any</strong> </li>
+</ul>
+<h2 id="pointneartool">pointNearTool</h2>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>element</code> <strong>any</strong> </li>
+<li><code>data</code> <strong>any</strong> </li>
+<li><code>coords</code> <strong>any</strong> </li>
+</ul>
+<h2 id="rendertooldata">renderToolData</h2>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong>any</strong> </li>
+</ul>
+<h2 id="anglebetweenpoints">angleBetweenPoints</h2>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>p0</code>  </li>
+<li><code>p1</code>  </li>
+<li><code>p2</code>  </li>
+</ul>
+<h2 id="computescalebounds">computeScaleBounds</h2>
+<p>Computes the max bound for scales on the image</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>canvasSize</code>  </li>
+<li><code>horizontalReduction</code>  </li>
+<li><code>verticalReduction</code>  </li>
+</ul>
+<h2 id="drawverticalscalebarintervals">drawVerticalScalebarIntervals</h2>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>context</code>  </li>
+<li><code>element</code>  </li>
+<li><code>imageAttributes</code>  </li>
+</ul>
+<h2 id="basiclevelingstrategy">basicLevelingStrategy</h2>
+<p>Here we normalize the ww/wc adjustments so the same number of on screen pixels
+adjusts the same percentage of the dynamic range of the image.  This is needed to
+provide consistency for the ww/wc tool regardless of the dynamic range (e.g. an 8 bit
+image will feel the same as a 16 bit image would)</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code>  </li>
+<li><code>$1</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> <ul>
+<li><code>$1.orientation</code>  </li>
+</ul>
+</li>
+<li><code>eventData</code>  </li>
+</ul>
+<h2 id="startoutliningregion">_startOutliningRegion</h2>
+<p>Sets the start handle point and claims the eventDispatcher event</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong>any</strong> </li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank">Boolean</a></strong> True</p>
+<h2 id="sethandlesandupdate">_setHandlesAndUpdate</h2>
+<p>This function will update the handles and updateImage to force re-draw</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code>  </li>
+</ul>
+<h2 id="applystrategy">_applyStrategy</h2>
+<p>Event handler for MOUSE_UP during handle drag event loop.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The event.</li>
+</ul>
+<h2 id="resethandles">_resetHandles</h2>
+<p>Sets the start and end handle points to empty objects</p>
+<h2 id="isemptyobject">isEmptyObject</h2>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>obj</code> <strong>any</strong> </li>
+</ul>
+<h2 id="applywwwcregion">applyWWWCRegion</h2>
+<p>Calculates the minimum and maximum value in the given pixel array</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong>any</strong> </li>
+<li><code>config</code> <strong>any</strong> </li>
+</ul>
+<h2 id="calculateminmaxmean">calculateMinMaxMean</h2>
+<p>Calculates the minimum, maximum, and mean value in the given pixel array</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>storedPixelLuminanceData</code> <strong>any</strong> </li>
+<li><code>globalMin</code> <strong>any</strong> </li>
+<li><code>globalMax</code> <strong>any</strong> </li>
+</ul>
+<h2 id="defaultstrategy">defaultStrategy</h2>
+<p>The default strategy keeps the target location fixed on the page
+as we zoom in/out.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong>any</strong> </li>
+<li><code>null</code> <strong>any</strong> { invert, maxScale, minScale }<ul>
+<li><code>null.invert</code>  </li>
+<li><code>null.maxScale</code>  </li>
+<li><code>null.minScale</code>  </li>
+</ul>
+</li>
+</ul>
+<h2 id="touchpinchcallback">touchPinchCallback</h2>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong>any</strong> </li>
+</ul>
+<h2 id="mousewheelcallback">mouseWheelCallback</h2>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong>any</strong> </li>
+</ul>
+<h2 id="converttovector3">convertToVector3</h2>
+<p>Convert an Array to a cornerstoneMath.Vector3</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>arrayOrVector3</code> <strong>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank">Array</a> | cornerstoneMath.Vector3)</strong> Input array or Vector3</li>
+</ul>
+<p>Returns <strong>cornerstoneMath.Vector3</strong> </p>
+<h2 id="renderbrush">renderBrush</h2>
+<p>Called by the event dispatcher to render the image.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The event.</li>
+</ul>
+<h2 id="renderbrush">renderBrush</h2>
+<p>Helper function for rendering the brush.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The event.</li>
+</ul>
+<h2 id="paint">_paint</h2>
+<p>Paints the data to the canvas.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>eventData</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The data object associated with the event.</li>
+</ul>
+<h2 id="mousedragcallback">mouseDragCallback</h2>
+<p>Event handler for MOUSE_DRAG event.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The event.</li>
+</ul>
+<h2 id="premousedowncallback">preMouseDownCallback</h2>
+<p>Event handler for MOUSE_DOWN event.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The event.</li>
+</ul>
+<h2 id="startpainting">_startPainting</h2>
+<p>Initialise painting with baseBrushTool</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The event.</li>
+</ul>
+<h2 id="mousemovecallback">mouseMoveCallback</h2>
+<p>Event handler for MOUSE_MOVE event.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The event.</li>
+</ul>
+<h2 id="passivecallback">passiveCallback</h2>
+<p>Event handler for switching mode to passive;</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The event.</li>
+</ul>
+<h2 id="rendertooldata">renderToolData</h2>
+<p>Used to redraw the tool&apos;s annotation data per render.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The event.</li>
+</ul>
+<h2 id="nextsegmentation">nextSegmentation</h2>
+<p>Switches to the next segmentation color.</p>
+<h2 id="previoussegmentation">previousSegmentation</h2>
+<p>Switches to the previous segmentation color.</p>
+<h2 id="increasebrushsize">increaseBrushSize</h2>
+<p>Increases the brush size</p>
+<h2 id="decreasebrushsize">decreaseBrushSize</h2>
+<p>Decreases the brush size</p>
+<h2 id="getbrushcolor">_getBrushColor</h2>
+<p>Get the draw color (segmentation) of the tool.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>drawId</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank">Number</a></strong> The id of the color (segmentation) to switch to.</li>
+</ul>
+<h2 id="drawingmouseupcallback">_drawingMouseUpCallback</h2>
+<p>Event handler for MOUSE_UP during the drawing event loop.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>evt</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The event.</li>
+</ul>
+<h2 id="startlisteningformouseup">_startListeningForMouseUp</h2>
+<p>Adds modify loop event listeners.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>element</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The viewport element to add event listeners to.</li>
+</ul>
+<h2 id="stoplisteningformouseup">_stopListeningForMouseUp</h2>
+<p>Adds modify loop event listeners.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>element</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The viewport element to add event listeners to.</li>
+</ul>
+<h2 id="showsegmentationonelement">showSegmentationOnElement</h2>
+<p>Displays a segmentation on the element.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>segIndex</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank">Number</a></strong> The index of the segmentation.</li>
+<li><code>enabledElement</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">String</a></strong> The enabledElement on which to display.</li>
+</ul>
+<h2 id="hidesegmentationonelement">hideSegmentationOnElement</h2>
+<p>Hides a segmentation on an element.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>segIndex</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank">Number</a></strong> The index of the segmentation.</li>
+</ul>
+<h2 id="showallsegmentationsonelement">showAllSegmentationsOnElement</h2>
+<p>Displays all segmentations on an element.</p>
+<h2 id="hideallsegmentationsonelement">hideAllSegmentationsOnElement</h2>
+<p>Hides all segmentations on an element.</p>
+<h2 id="getnumberofcolors">getNumberOfColors</h2>
+<p>Returns the number of colors in the colormap.</p>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank">Number</a></strong> The number of colors in the color map.</p>
+<h2 id="getreferencedtooldataname">getReferencedToolDataName</h2>
+<p>Returns the toolData type assoicated with this type of tool.</p>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">String</a></strong> The number of colors in the color map.</p>
+<h2 id="keypress">keyPress</h2>
+<p>Calls the function mapped to the keypress</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>keyCode</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank">Number</a></strong> description</li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank">Boolean</a></strong> Whether a function was called.</p>
+<h2 id="setcontexttodisplayfontsize">setContextToDisplayFontSize</h2>
+<p>Sets the canvas context transformation matrix so it is scaled to show text
+more cleanly even if the image is scaled up.  See
+<a href="https://github.com/cornerstonejs/cornerstoneTools/wiki/DrawingText" target="_blank">https://github.com/cornerstonejs/cornerstoneTools/wiki/DrawingText</a>
+for more information</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>enabledElement</code>  </li>
+<li><code>context</code>  </li>
+<li><code>fontSize</code>  </li>
+</ul>
+<p>Returns <strong>{fontSize: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank">number</a>, lineHeight: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank">number</a>, fontScale: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank">number</a>}</strong> </p>
+<h2 id="triggerevent">triggerEvent</h2>
+<p>Trigger a CustomEvent</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>el</code> <strong>EventTarget</strong> The element or EventTarget to trigger the event upon</li>
+<li><code>type</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">String</a></strong> The event type name</li>
+<li><code>detail</code> <strong>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a> | null)</strong> =null The event data to be sent (optional, default <code>null</code>)</li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank">Boolean</a></strong> The return value is false if at least one event listener called preventDefault(). Otherwise it returns true.</p>
+<h2 id="makeunselectable">makeUnselectable</h2>
+<p>A helper function to make an element (and its content) being non selectable.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>element</code>  {HTMLElement} The element to make unselectable</li>
+<li><code>ignorePointerEvents</code>  {Boolean} true to make this element also ignore events
+(e.g. mouse click), false otherwise</li>
+</ul>
+<p>Returns <strong>void</strong> </p>
+<h2 id=""> </h2>
+<p><strong>Meta</strong></p>
+<ul>
+<li><strong>deprecated</strong>: Use drawing.js:drawEllipse()</li>
+</ul>
+<h2 id="drawcircle">drawCircle</h2>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>context</code>  </li>
+<li><code>start</code>  </li>
+<li><code>color</code>  </li>
+<li><code>lineWidth</code>  </li>
+</ul>
+<p><strong>Meta</strong></p>
+<ul>
+<li><strong>deprecated</strong>: Use drawing.js:drawCircle()</li>
+</ul>
+<h2 id="drawcircle">drawCircle</h2>
+<p>Draw a circle with given <code>center</code> and <code>radius</code>.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>context</code> <strong><a href="https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D" target="_blank">CanvasRenderingContext2D</a></strong> </li>
+<li><code>element</code> <strong><a href="https://developer.mozilla.org/docs/Web/HTML/Element" target="_blank">HTMLElement</a></strong> The DOM Element to draw on</li>
+<li><code>center</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> <code>{ x, y }</code> in either pixel or canvas coordinates.</li>
+<li><code>radius</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank">number</a></strong> The circle&apos;s radius in canvas units.</li>
+<li><code>options</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> See <a href="#path">path</a></li>
+<li><code>coordSystem</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">String</a></strong> Can be &quot;pixel&quot; (default) or &quot;canvas&quot;. The coordinate<pre><code>system of the points passed in to the function. If &quot;pixel&quot; then cornerstone.pixelToCanvas
+is used to transform the points from pixel to canvas coordinates. (optional, default `&apos;pixel&apos;`)
+</code></pre></li>
+</ul>
+<h2 id="getplaycliptimeouts">getPlayClipTimeouts</h2>
+<p>[private] Turns a Frame Time Vector (0018,1065) array into a normalized array of timeouts. Each element
+... of the resulting array represents the amount of time each frame will remain on the screen.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>vector</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank">Array</a></strong> A Frame Time Vector (0018,1065) as specified in section C.7.6.5.1.2 of DICOM standard.</li>
+<li><code>speed</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank">Number</a></strong> A speed factor which will be applied to each element of the resulting array.</li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank">Array</a></strong> An array with timeouts for each animation frame.</p>
+<h2 id="stopclipwithdata">stopClipWithData</h2>
+<p>[private] Performs the heavy lifting of stopping an ongoing animation.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>playClipData</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> The data from playClip that needs to be stopped.</li>
+</ul>
+<p>Returns <strong>any</strong> void</p>
+<h2 id="triggerstopevent">triggerStopEvent</h2>
+<p>[private] Trigger playClip tool stop event.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>element</code>  </li>
+</ul>
+<p>Returns <strong>any</strong> void</p>
+<h2 id="playclip">playClip</h2>
+<p>Starts playing a clip or adjusts the frame rate of an already playing clip.  framesPerSecond is
+optional and defaults to 30 if not specified.  A negative framesPerSecond will play the clip in reverse.
+The element must be a stack of images</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>element</code>  </li>
+<li><code>framesPerSecond</code>  </li>
+</ul>
+<h2 id="stopclip">stopClip</h2>
+<p>Stops an already playing clip.</p>
+<ul>
+<li>@param element</li>
+</ul>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>element</code>  </li>
+</ul>
+<h2 id="gettooloptions">getToolOptions</h2>
+<p>Retrieve the options object associated with a particular toolType and element</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>toolType</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">string</a></strong> Tool type identifier of the target options object</li>
+<li><code>element</code> <strong><a href="https://developer.mozilla.org/docs/Web/HTML/Element" target="_blank">HTMLElement</a></strong> Element of the target options object</li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> Target options object (empty if not yet set)</p>
+<h2 id="cleartooloptions">clearToolOptions</h2>
+<p>Clear the options object associated with a particular toolType and element</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>toolType</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">string</a></strong> Tool type identifier of the target options object</li>
+<li><code>element</code> <strong><a href="https://developer.mozilla.org/docs/Web/HTML/Element" target="_blank">HTMLElement</a></strong> Element of the target options object</li>
+</ul>
+<p>Returns <strong>void</strong> </p>
+<h2 id="cleartooloptionsbytooltype">clearToolOptionsByToolType</h2>
+<p>Clear the options objects associated with a particular toolType</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>toolType</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">string</a></strong> Tool type identifier of the target options objects</li>
+</ul>
+<p>Returns <strong>void</strong> </p>
+<h2 id="cleartooloptionsbyelement">clearToolOptionsByElement</h2>
+<p>Clear the options objects associated with a particular element</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>element</code> <strong><a href="https://developer.mozilla.org/docs/Web/HTML/Element" target="_blank">HTMLElement</a></strong> Element of the target options objects</li>
+</ul>
+<p>Returns <strong>void</strong> </p>
+<h2 id="getnewcontext">getNewContext</h2>
+<p>Create a new <a href="https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D" target="_blank">context</a> object for the given <a href="https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement" target="_blank">canvas</a>
+and set the transform to the <a href="https://www.w3.org/TR/2dcontext/#transformations" target="_blank">identity transform</a>.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>canvas</code> <strong><a href="https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement" target="_blank">HTMLCanvasElement</a></strong> </li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D" target="_blank">CanvasRenderingContext2D</a></strong> </p>
+<h2 id="contextfn">ContextFn</h2>
+<p>Type: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function" target="_blank">Function</a></p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>context</code> <strong><a href="https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D" target="_blank">CanvasRenderingContext2D</a></strong> </li>
+</ul>
+<h2 id="strokestyle">StrokeStyle</h2>
+<p>A <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/strokeStyle" target="_blank">color, gradient or pattern</a> to use for the lines around shapes.</p>
+<p>Type: (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">String</a> | <a href="https://developer.mozilla.org/docs/Web/API/CanvasGradient" target="_blank">CanvasGradient</a> | <a href="https://developer.mozilla.org/docs/Web/API/CanvasPattern" target="_blank">CanvasPattern</a>)</p>
+<h2 id="fillstyle">FillStyle</h2>
+<p>A <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fillStyle" target="_blank">color, gradient or pattern</a> to use inside shapes.</p>
+<p>Type: (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">String</a> | <a href="https://developer.mozilla.org/docs/Web/API/CanvasGradient" target="_blank">CanvasGradient</a> | <a href="https://developer.mozilla.org/docs/Web/API/CanvasPattern" target="_blank">CanvasPattern</a>)</p>
+<h2 id="draw">draw</h2>
+<p>This function manages the <a href="https://www.w3.org/TR/2dcontext/#the-canvas-state" target="_blank">save/restore</a>
+pattern for working in a new context state stack. The parameter <code>fn</code> is passed the <code>context</code> and can
+execute any API calls in a clean stack.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>context</code> <strong><a href="https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D" target="_blank">CanvasRenderingContext2D</a></strong> </li>
+<li><code>fn</code> <strong><a href="#contextfn">ContextFn</a></strong> A function which performs drawing operations within the given context.</li>
+</ul>
+<h2 id="path">path</h2>
+<p>This function manages the beginPath/stroke pattern for working with
+<a href="https://www.w3.org/TR/2dcontext/#drawing-paths-to-the-canvas" target="_blank">path objects</a>.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>context</code> <strong><a href="https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D" target="_blank">CanvasRenderingContext2D</a></strong> </li>
+<li><code>options</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> <ul>
+<li><code>options.color</code> <strong><a href="#strokestyle">StrokeStyle</a></strong>  The stroke style of the path.</li>
+<li><code>options.lineWidth</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank">Number</a></strong>  The width of lines in the path. If null, no line width is set.<pre><code>If undefined then toolStyle.getToolWidth() is set.
+</code></pre></li>
+<li><code>options.fillStyle</code> <strong><a href="#fillstyle">FillStyle</a></strong> The style to fill the path with. If undefined then no filling is done.</li>
+<li><code>options.lineDash</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank">Array</a>&lt;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank">Number</a>&gt;</strong> The <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/setLineDash" target="_blank">dash pattern</a><pre><code>to use on the lines.
+</code></pre></li>
+</ul>
+</li>
+<li><code>fn</code> <strong><a href="#contextfn">ContextFn</a></strong> A drawing function to execute with the provided stroke pattern.</li>
+</ul>
+<h2 id="setshadow">setShadow</h2>
+<p>Set the <a href="https://www.w3.org/TR/2dcontext/#shadows" target="_blank">shadow</a> properties of the context.
+Each property is set on the context object if defined, otherwise a default value is set.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>context</code> <strong><a href="https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D" target="_blank">CanvasRenderingContext2D</a></strong> </li>
+<li><code>options</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> <ul>
+<li><code>options.shadow</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank">Boolean</a></strong> Whether to set any shadow options</li>
+<li><code>options.shadowColor</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">String</a></strong> Default value: #000000</li>
+<li><code>options.shadowOffsetX</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank">Number</a></strong> Default value: 1</li>
+<li><code>options.shadowOffsetY</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank">Number</a></strong> Default value: 1</li>
+</ul>
+</li>
+</ul>
+<h2 id="drawline">drawLine</h2>
+<p>Draw a line between <code>start</code> and <code>end</code>.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>context</code> <strong><a href="https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D" target="_blank">CanvasRenderingContext2D</a></strong> </li>
+<li><code>element</code> <strong><a href="https://developer.mozilla.org/docs/Web/HTML/Element" target="_blank">HTMLElement</a></strong> The DOM Element to draw on</li>
+<li><code>start</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> `{ x, y } in either pixel or canvas coordinates.</li>
+<li><code>end</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> <code>{ x, y }</code> in either pixel or canvas coordinates.</li>
+<li><code>options</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> See <a href="#path">path</a></li>
+<li><code>coordSystem</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">String</a></strong> Can be &quot;pixel&quot; (default) or &quot;canvas&quot;. The coordinate<pre><code>system of the points passed in to the function. If &quot;pixel&quot; then cornerstone.pixelToCanvas
+is used to transform the points from pixel to canvas coordinates. (optional, default `&apos;pixel&apos;`)
+</code></pre></li>
+</ul>
+<h2 id="drawlines">drawLines</h2>
+<p>Draw multiple lines.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>context</code> <strong><a href="https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D" target="_blank">CanvasRenderingContext2D</a></strong> </li>
+<li><code>element</code> <strong><a href="https://developer.mozilla.org/docs/Web/HTML/Element" target="_blank">HTMLElement</a></strong> The DOM Element to draw on</li>
+<li><code>lines</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank">Array</a>&lt;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a>&gt;</strong> <code>[{ start: {x, y}, end: { x, y }]</code> An array of <code>start</code>, <code>end</code> pairs.<pre><code>Each point is `{ x, y }` in either pixel or canvas coordinates.
+</code></pre></li>
+<li><code>options</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> See <a href="#path">path</a></li>
+<li><code>coordSystem</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">String</a></strong> Can be &quot;pixel&quot; (default) or &quot;canvas&quot;. The coordinate<pre><code>system of the points passed in to the function. If &quot;pixel&quot; then cornerstone.pixelToCanvas
+is used to transform the points from pixel to canvas coordinates. (optional, default `&apos;pixel&apos;`)
+</code></pre></li>
+</ul>
+<h2 id="drawjoinedlines">drawJoinedLines</h2>
+<p>Draw a series of joined lines, starting at <code>start</code> and then going to each point in <code>points</code>.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>context</code> <strong><a href="https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D" target="_blank">CanvasRenderingContext2D</a></strong> </li>
+<li><code>element</code> <strong><a href="https://developer.mozilla.org/docs/Web/HTML/Element" target="_blank">HTMLElement</a></strong> The DOM Element to draw on</li>
+<li><code>start</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> <code>{ x, y }</code> in either pixel or canvas coordinates.</li>
+<li><code>points</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank">Array</a>&lt;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a>&gt;</strong> <code>[{ x, y }]</code> An array of points in either pixel or canvas coordinates.</li>
+<li><code>options</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> See <a href="#path">path</a></li>
+<li><code>coordSystem</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">String</a></strong> Can be &quot;pixel&quot; (default) or &quot;canvas&quot;. The coordinate<pre><code>system of the points passed in to the function. If &quot;pixel&quot; then cornerstone.pixelToCanvas
+is used to transform the points from pixel to canvas coordinates. (optional, default `&apos;pixel&apos;`)
+</code></pre></li>
+</ul>
+<h2 id="drawellipse">drawEllipse</h2>
+<p>Draw an ellipse within the bounding box defined by <code>corner1</code> and <code>corner2</code>.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>context</code> <strong><a href="https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D" target="_blank">CanvasRenderingContext2D</a></strong> </li>
+<li><code>element</code> <strong><a href="https://developer.mozilla.org/docs/Web/HTML/Element" target="_blank">HTMLElement</a></strong> The DOM Element to draw on</li>
+<li><code>corner1</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> <code>{ x, y }</code> in either pixel or canvas coordinates.</li>
+<li><code>corner2</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> <code>{ x, y }</code> in either pixel or canvas coordinates.</li>
+<li><code>options</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> See <a href="#path">path</a></li>
+<li><code>coordSystem</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">String</a></strong> Can be &quot;pixel&quot; (default) or &quot;canvas&quot;. The coordinate<pre><code>system of the points passed in to the function. If &quot;pixel&quot; then cornerstone.pixelToCanvas
+is used to transform the points from pixel to canvas coordinates. (optional, default `&apos;pixel&apos;`)
+</code></pre></li>
+</ul>
+<h2 id="drawrect">drawRect</h2>
+<p>Draw a rectangle defined by <code>corner1</code> and <code>corner2</code>.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>context</code> <strong><a href="https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D" target="_blank">CanvasRenderingContext2D</a></strong> </li>
+<li><code>element</code> <strong><a href="https://developer.mozilla.org/docs/Web/HTML/Element" target="_blank">HTMLElement</a></strong> The DOM Element to draw on</li>
+<li><code>corner1</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> <code>{ x, y }</code> in either pixel or canvas coordinates.</li>
+<li><code>corner2</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> <code>{ x, y }</code> in either pixel or canvas coordinates.</li>
+<li><code>options</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> See <a href="#path">path</a></li>
+<li><code>coordSystem</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">String</a></strong> Can be &quot;pixel&quot; (default) or &quot;canvas&quot;. The coordinate<pre><code>system of the points passed in to the function. If &quot;pixel&quot; then cornerstone.pixelToCanvas
+is used to transform the points from pixel to canvas coordinates. (optional, default `&apos;pixel&apos;`)
+</code></pre></li>
+</ul>
+<h2 id="fillbox">fillBox</h2>
+<p>Draw a filled rectangle defined by <code>boundingBox</code> using the style defined by <code>fillStyle</code>.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>context</code> <strong><a href="https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D" target="_blank">CanvasRenderingContext2D</a></strong> </li>
+<li><code>boundingBox</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> <code>{ left, top, width, height }</code> in canvas coordinates.</li>
+<li><code>fillStyle</code> <strong><a href="#fillstyle">FillStyle</a></strong> The fillStyle to apply to the region.</li>
+</ul>
+<h2 id="filltextlines">fillTextLines</h2>
+<p>Draw multiple lines of text within a bounding box.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><code>context</code> <strong><a href="https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D" target="_blank">CanvasRenderingContext2D</a></strong> </li>
+<li><code>boundingBox</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a></strong> <code>{ left, top }</code> in canvas coordinates. Only the top-left corner is specified, as the text will take up as much space as it needs.</li>
+<li><code>textLines</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank">Array</a>&lt;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">String</a>&gt;</strong> The text to be displayed.</li>
+<li><code>fillStyle</code> <strong><a href="#fillstyle">FillStyle</a></strong> The fillStyle to apply to the text.</li>
+<li><code>padding</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number" target="_blank">Number</a></strong> The amount of padding above/below each line in canvas units. Note this gives an inter-line spacing of <code>2*padding</code>.</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+
+            </div>
+
+            
+                
+                <a href="migration/#1x" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Migration from 1.x">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"API","level":"5.1","depth":1,"next":{"title":"3rd Party Tool Directory","level":"5.2","depth":1,"ref":"","articles":[]},"previous":{"title":"Migration from 1.x","level":"4.2","depth":1,"anchor":"#1x","path":"migration/index.md","ref":"migration/index.md#1x","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","theme-cornerstone","-fontsettings","github","ga","sitemap","versions"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/cornerstonejs/cornerstoneTools"},"search":{},"theme-cornerstone":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"highlight":{},"sitemap":{"hostname":"https://tools.cornerstonejs.org"},"ga":{"configuration":"auto","token":"UA-110573590-1"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/cornerstonejs/cornerstoneTools/master/docs/book.json","options":[{"value":"https://tools.cornerstonejs.org/history/v2/","text":"Version 2.x"},{"value":"https://tools.cornerstonejs.org/","text":"Version 3.x","selected":true}]},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/cornerstonejs/cornerstoneTools/edit/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"cornerstone-tools","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":">3.0.0"},"file":{"path":"api.md","mtime":"2018-09-22T18:02:43.540Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-22T18:04:55.442Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-versions/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+
