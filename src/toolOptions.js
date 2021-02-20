@@ -1,20 +1,26 @@
 const elementToolOptions = {};
 
 /**
- * Retrieve the options object associated with a particular toolType and element
+ * Retrieve the options object associated with a particular toolName and element
+ * @export
+ * @public
+ * @method
+ * @name getToolOptions
  *
- * @param {string} toolType Tool type identifier of the target options object
+ * @param {string} toolName Tool name identifier of the target options object
  * @param {HTMLElement} element Element of the target options object
  *
- * @return {Object} Target options object (empty if not yet set)
+ * @returns {Object} Target options object (empty if not yet set)
  */
-function getToolOptions (toolType, element) {
-  if (!elementToolOptions[toolType]) {
+function getToolOptions(toolName, element) {
+  if (!elementToolOptions[toolName]) {
     return {};
   }
 
-  const toolOptions = elementToolOptions[toolType];
-  const optionsObject = toolOptions.find((toolOptionObject) => toolOptionObject.element === element);
+  const toolOptions = elementToolOptions[toolName];
+  const optionsObject = toolOptions.find(
+    toolOptionObject => toolOptionObject.element === element
+  );
 
   if (!optionsObject) {
     return {};
@@ -24,79 +30,116 @@ function getToolOptions (toolType, element) {
 }
 
 /**
- * Set the options object associated with a particular toolType and element
+ * Set the options object associated with a particular toolName and element.
+ * @export
+ * @public
+ * @method
+ * @name setToolOptions
  *
- * @param {string} toolType Tool type identifier of the target options object
- * @param {HTMLElement} element Element of the target options object
- * @param {Object} options Options object to store at target
- *
- * @return {void}
+ * @param {string} toolName Tool name identifier of the target options object.
+ * @param {HTMLElement} element Element of the target options object.
+ * @param {Object} options Options object to store at target.
+ * @returns {void}
  */
-function setToolOptions (toolType, element, options) {
-  if (!elementToolOptions[toolType]) {
-    elementToolOptions[toolType] = [{
-      element,
-      options
-    }];
+function setToolOptions(toolName, element, options) {
+  if (!elementToolOptions[toolName]) {
+    elementToolOptions[toolName] = [
+      {
+        element,
+        options,
+      },
+    ];
 
     return;
   }
 
-  const toolOptions = elementToolOptions[toolType];
-  const index = toolOptions.findIndex((toolOptionObject) => toolOptionObject.element === element);
+  const toolOptions = elementToolOptions[toolName];
+  const index = toolOptions.findIndex(
+    toolOptionObject => toolOptionObject.element === element
+  );
 
   if (index === -1) {
-    elementToolOptions[toolType].push({
+    elementToolOptions[toolName].push({
       element,
-      options
+      options,
     });
   } else {
-    const elementOptions = elementToolOptions[toolType][index].options || {};
+    const elementOptions = elementToolOptions[toolName][index].options || {};
 
-    elementToolOptions[toolType][index].options = Object.assign(elementOptions, options);
-  }
-}
-
-/**
- * Clear the options object associated with a particular toolType and element
- *
- * @param {string} toolType Tool type identifier of the target options object
- * @param {HTMLElement} element Element of the target options object
- *
- * @return {void}
- */
-function clearToolOptions (toolType, element) {
-  const toolOptions = elementToolOptions[toolType];
-
-  if (toolOptions) {
-    elementToolOptions[toolType] = toolOptions.filter(
-      (toolOptionObject) => toolOptionObject.element !== element
+    elementToolOptions[toolName][index].options = Object.assign(
+      elementOptions,
+      options
     );
   }
 }
 
 /**
- * Clear the options objects associated with a particular toolType
+ * Clear the options object associated with a particular toolName and element.
+ * @export
+ * @public
+ * @method
+ * @name clearToolOptions
  *
- * @param {string} toolType Tool type identifier of the target options objects
- *
- * @return {void}
+ * @param {string} toolName Tool name identifier of the target options object.
+ * @param {HTMLElement} element Element of the target options object.
+ * @returns {void}
  */
-function clearToolOptionsByToolType (toolType) {
-  delete elementToolOptions[toolType];
+function clearToolOptions(toolName, element) {
+  const toolOptions = elementToolOptions[toolName];
+
+  if (toolOptions) {
+    elementToolOptions[toolName] = toolOptions.filter(
+      toolOptionObject => toolOptionObject.element !== element
+    );
+  }
 }
 
 /**
- * Clear the options objects associated with a particular element
+ * Clear the options objects associated with a particular toolType.
  *
- * @param {HTMLElement} element Element of the target options objects
+ * Deprecation notice: use clearToolOptionsByToolName instead
+ * @deprecated
  *
- * @return {void}
+ * @export
+ * @public
+ * @method
+ * @name clearToolOptionsByToolType
+ *
+ * @param {string} toolType Tool type identifier of the target options objects.
+ * @returns {void}
  */
-function clearToolOptionsByElement (element) {
-  for (const toolType in elementToolOptions) {
-    elementToolOptions[toolType] = elementToolOptions[toolType].filter(
-      (toolOptionObject) => toolOptionObject.element !== element
+function clearToolOptionsByToolType(toolType) {
+  return clearToolOptionsByToolName(toolType);
+}
+
+/**
+ * Clear the options objects associated with a particular toolName.
+ * @export
+ * @public
+ * @method
+ * @name clearToolOptionsByToolName
+ *
+ * @param {string} toolName Tool name identifier of the target options objects.
+ * @returns {void}
+ */
+function clearToolOptionsByToolName(toolName) {
+  delete elementToolOptions[toolName];
+}
+
+/**
+ * Clear the options objects associated with a particular element.
+ * @export
+ * @public
+ * @method
+ * @name clearToolOptionsByElement
+ *
+ * @param {HTMLElement} element Element of the target options objects.
+ * @returns {void}
+ */
+function clearToolOptionsByElement(element) {
+  for (const toolName in elementToolOptions) {
+    elementToolOptions[toolName] = elementToolOptions[toolName].filter(
+      toolOptionObject => toolOptionObject.element !== element
     );
   }
 }
@@ -106,5 +149,6 @@ export {
   setToolOptions,
   clearToolOptions,
   clearToolOptionsByToolType,
-  clearToolOptionsByElement
+  clearToolOptionsByToolName,
+  clearToolOptionsByElement,
 };
