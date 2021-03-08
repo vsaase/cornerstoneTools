@@ -122,6 +122,7 @@ export default {
       labelmap2D.segmentsOnLabelmap = getSegmentsOnPixelData(
         labelmap2D.pixelData
       );
+      labelmap2D.canvasElementNeedsUpdate = true;
     },
     deleteSegment,
     colorLUT: setColorLUT,

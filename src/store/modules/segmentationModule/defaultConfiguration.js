@@ -4,7 +4,7 @@ const { UINT_16_ARRAY } = ARRAY_TYPES;
 
 // Segmentation module configuration.
 const defaultConfiguration = {
-  renderOutline: true,
+  renderOutline: false,
   renderFill: true,
   shouldRenderInactiveLabelmaps: true,
   radius: 10,
