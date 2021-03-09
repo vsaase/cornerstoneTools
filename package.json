@@ -41,7 +41,7 @@
     "test:unit": "jest --clearCache && jest --runInBand \\.test\\.js$",
     "test:ci": "npm run test:unit && codecov",
     "version": "node -p -e \"'export default \\'' + require('./package.json').version + '\\';'\" > src/version.js",
-    "prepare": "npm run build:prod"
+    "prepare": "npm run start"
   },
   "husky": {
     "hooks": {
