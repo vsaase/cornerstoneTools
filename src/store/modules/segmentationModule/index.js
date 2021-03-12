@@ -118,11 +118,11 @@ export default {
     decrementActiveSegmentIndex,
     activeSegmentIndex: setActiveSegmentIndex,
     toggleSegmentVisibility,
-    updateSegmentsOnLabelmap2D: labelmap2D => {
+    updateSegmentsOnLabelmap2D: (labelmap2D) => {
       labelmap2D.segmentsOnLabelmap = getSegmentsOnPixelData(
         labelmap2D.pixelData
       );
-      labelmap2D.canvasElementNeedsUpdate = true;
+      labelmap2D.ctxNeedsUpdate = true;
     },
     deleteSegment,
     colorLUT: setColorLUT,

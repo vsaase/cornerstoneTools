@@ -41,23 +41,24 @@ export function getLabelmapCanvas(evt, labelmap3D, labelmap2D) {
   const colorLutTable = state.colorLutTables[labelmap3D.colorLUTIndex];
 
   if (
-    !labelmap2D.canvasElement ||
-    labelmap2D.canvasElement.width != cols ||
-    labelmap2D.canvasElement.height != rows
+    !labelmap2D.ctx ||
+    !labelmap2D.ctx.canvas ||
+    labelmap2D.ctx.canvas.width != cols ||
+    labelmap2D.ctx.canvas.height != rows
   ) {
-    labelmap2D.canvasElement = document.createElement('canvas');
+    const canvasElement = document.createElement('canvas');
 
-    labelmap2D.canvasElement.width = cols;
-    labelmap2D.canvasElement.height = rows;
+    canvasElement.width = cols;
+    canvasElement.height = rows;
+    labelmap2D.ctx = getNewContext(canvasElement);
 
-    labelmap2D.ctx = getNewContext(labelmap2D.canvasElement);
     // Image data initialized with all transparent black.
     labelmap2D.imageData = new ImageData(cols, rows);
     console.log('creating new imageData');
-    labelmap2D.canvasElementNeedsUpdate = true;
+    labelmap2D.ctxNeedsUpdate = true;
   }
 
-  if (labelmap2D.canvasElementNeedsUpdate) {
+  if (labelmap2D.ctxNeedsUpdate) {
     const data = labelmap2D.imageData.data;
     for (let i = 0; i < pixelData.length; i++) {
       const segmentIndex = pixelData[i];
@@ -77,7 +78,7 @@ export function getLabelmapCanvas(evt, labelmap3D, labelmap2D) {
         data[4 * i + 3] = 0;
       }
     }
-    labelmap2D.canvasElementNeedsUpdate = false;
+    labelmap2D.ctxNeedsUpdate = false;
     // Put this image data onto the labelmapCanvas.
     labelmap2D.ctx.putImageData(labelmap2D.imageData, 0, 0);
   }
