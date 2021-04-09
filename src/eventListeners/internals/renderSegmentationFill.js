@@ -39,35 +39,50 @@ export function getLabelmapCanvas(evt, labelmap3D, labelmap2D) {
   const { segmentsHidden } = labelmap3D;
   const pixelData = labelmap2D.pixelData;
   const colorLutTable = state.colorLutTables[labelmap3D.colorLUTIndex];
-  const canvasElement = document.createElement('canvas');
 
-  canvasElement.width = cols;
-  canvasElement.height = rows;
+  if (
+    !labelmap2D.canvasElement ||
+    labelmap2D.canvasElement.width != cols ||
+    labelmap2D.canvasElement.height != rows
+  ) {
+    labelmap2D.canvasElement = document.createElement('canvas');
 
-  const ctx = getNewContext(canvasElement);
+    labelmap2D.canvasElement.width = cols;
+    labelmap2D.canvasElement.height = rows;
 
-  // Image data initialized with all transparent black.
-  const imageData = new ImageData(cols, rows);
-  const data = imageData.data;
-
-  for (let i = 0; i < pixelData.length; i++) {
-    const segmentIndex = pixelData[i];
-
-    if (segmentIndex !== 0 && !segmentsHidden[segmentIndex]) {
-      const color = colorLutTable[pixelData[i]];
-
-      // Modify ImageData.
-      data[4 * i] = color[0]; // R value
-      data[4 * i + 1] = color[1]; // G value
-      data[4 * i + 2] = color[2]; // B value
-      data[4 * i + 3] = color[3]; // A value
-    }
+    labelmap2D.ctx = getNewContext(labelmap2D.canvasElement);
+    // Image data initialized with all transparent black.
+    labelmap2D.imageData = new ImageData(cols, rows);
+    console.log('creating new imageData');
+    labelmap2D.canvasElementNeedsUpdate = true;
   }
 
-  // Put this image data onto the labelmapCanvas.
-  ctx.putImageData(imageData, 0, 0);
+  if (labelmap2D.canvasElementNeedsUpdate) {
+    const data = labelmap2D.imageData.data;
+    for (let i = 0; i < pixelData.length; i++) {
+      const segmentIndex = pixelData[i];
 
-  return canvasElement;
+      if (segmentIndex !== 0 && !segmentsHidden[segmentIndex]) {
+        const color = colorLutTable[pixelData[i]];
+
+        // Modify ImageData.
+        data[4 * i] = color[0]; // R value
+        data[4 * i + 1] = color[1]; // G value
+        data[4 * i + 2] = color[2]; // B value
+        data[4 * i + 3] = color[3]; // A value
+      } else {
+        data[4 * i] = 0;
+        data[4 * i + 1] = 0;
+        data[4 * i + 2] = 0;
+        data[4 * i + 3] = 0;
+      }
+    }
+    labelmap2D.canvasElementNeedsUpdate = false;
+    // Put this image data onto the labelmapCanvas.
+    labelmap2D.ctx.putImageData(labelmap2D.imageData, 0, 0);
+  }
+
+  return labelmap2D.canvasElement;
 }
 
 /**
