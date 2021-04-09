@@ -171,28 +171,34 @@ export default class InterpolationTool extends BaseTool {
 
     let i1 = 0;
     while (i1 < imagesInRange.length - 2) {
+      console.log('i1', i1);
       //find first image i1 with active segment
       const v1 = getSegmentArray(i1); // get segment as binary vector v1
       if (v1.reduce((a, b) => a + b, 0) == 0) {
         //empty, try next
+        console.log('empty');
         i1++;
         continue;
       }
       const vnext = getSegmentArray(i1 + 1);
       if (vnext.reduce((a, b) => a + b, 0) > 0) {
         //next is not empty, no need to interpolate
+        console.log('next not empty');
         i1++;
         continue;
       }
       let i2 = i1 + 2;
       while (i2 < imagesInRange.length) {
+        console.log('i2', i2);
         // find next image i2 with active segment
         const v2 = getSegmentArray(i2);
         if (v2.reduce((a, b) => a + b, 0) == 0) {
           //empty, try next
+          console.log('i2 empty');
           i2++;
           continue;
         }
+        console.log('interpolating from ' + i1 + ' to ' + i2);
         for (let i = i1 + 1; i < i2; i++) {
           const vi = interpolate(i, i1, i2, v1, v2);
           setSegmentArray(i, vi);

@@ -74,7 +74,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "f51ccab2055239bf3eed";
+/******/ 	var hotCurrentHash = "a81f516a3d2186481314";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -31409,13 +31409,15 @@ function (_BaseTool) {
       var i1 = 0;
 
       while (i1 < imagesInRange.length - 2) {
-        //find first image i1 with active segment
+        console.log('i1', i1); //find first image i1 with active segment
+
         var v1 = getSegmentArray(i1); // get segment as binary vector v1
 
         if (v1.reduce(function (a, b) {
           return a + b;
         }, 0) == 0) {
           //empty, try next
+          console.log('empty');
           i1++;
           continue;
         }
@@ -31426,6 +31428,7 @@ function (_BaseTool) {
           return a + b;
         }, 0) > 0) {
           //next is not empty, no need to interpolate
+          console.log('next not empty');
           i1++;
           continue;
         }
@@ -31433,16 +31436,20 @@ function (_BaseTool) {
         var i2 = i1 + 2;
 
         while (i2 < imagesInRange.length) {
-          // find next image i2 with active segment
+          console.log('i2', i2); // find next image i2 with active segment
+
           var v2 = getSegmentArray(i2);
 
           if (v2.reduce(function (a, b) {
             return a + b;
           }, 0) == 0) {
             //empty, try next
+            console.log('i2 empty');
             i2++;
             continue;
           }
+
+          console.log('interpolating from ' + i1 + ' to ' + i2);
 
           for (var i = i1 + 1; i < i2; i++) {
             var vi = interpolate(i, i1, i2, v1, v2);
