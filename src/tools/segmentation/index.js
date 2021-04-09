@@ -4,6 +4,7 @@ import FreehandScissorsTool from './FreehandScissorsTool';
 import RectangleScissorsTool from './RectangleScissorsTool';
 import CircleScissorsTool from './CircleScissorsTool';
 import CorrectionScissorsTool from './CorrectionScissorsTool';
+import InterpolationTool from './InterpolationTool';
 
 // Named Exports
 export { default as BrushTool } from './BrushTool';
@@ -12,6 +13,7 @@ export { default as FreehandScissorsTool } from './FreehandScissorsTool';
 export { default as RectangleScissorsTool } from './RectangleScissorsTool';
 export { default as CircleScissorsTool } from './CircleScissorsTool';
 export { default as CorrectionScissorsTool } from './CorrectionScissorsTool';
+export { default as InterpolationTool } from './InterpolationTool';
 
 // Namespace, default export
 export default {
@@ -21,4 +23,5 @@ export default {
   CorrectionScissorsTool,
   FreehandScissorsTool,
   RectangleScissorsTool,
+  InterpolationTool,
 };
