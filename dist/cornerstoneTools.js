@@ -74,7 +74,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "a81f516a3d2186481314";
+/******/ 	var hotCurrentHash = "1a8199711df57719e8e2";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -31257,7 +31257,9 @@ function (_BaseTool) {
     var defaultProps = {
       name: 'Interpolation',
       supportedInteractionTypes: ['Mouse', 'Touch'],
-      configuration: {},
+      configuration: {
+        storeHistory: false
+      },
       mixins: []
     };
     return _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default()(this, _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default()(InterpolationTool).call(this, props, defaultProps));
@@ -31267,10 +31269,6 @@ function (_BaseTool) {
     key: "preMouseDownCallback",
     value: function preMouseDownCallback(evt) {
       this._startPainting(evt);
-
-      this._paint(evt);
-
-      this._endPainting(evt);
 
       return true;
     }
@@ -31286,15 +31284,13 @@ function (_BaseTool) {
     key: "_startPainting",
     value: function _startPainting(evt) {
       var configuration = segmentationModule.configuration,
-          getters = segmentationModule.getters;
+          getters = segmentationModule.getters,
+          setters = segmentationModule.setters;
       var eventData = evt.detail;
       var element = eventData.element,
           image = eventData.image;
-      var cornerstone = _externalModules_js__WEBPACK_IMPORTED_MODULE_5__["default"].cornerstone;
-      var radius = configuration.radius;
       var rows = image.rows,
           columns = image.columns;
-      var pixelSpacing = Math.max(image.rowPixelSpacing, image.columnPixelSpacing);
       var stackState = Object(_stateManagement_toolState_js__WEBPACK_IMPORTED_MODULE_9__["getToolState"])(element, 'stack');
       var stackData = stackState.data[0];
       var imageIds = stackData.imageIds;
@@ -31308,7 +31304,7 @@ function (_BaseTool) {
       var imagesInRange = Array.from({
         length: imageIds.length
       }, function (v, k) {
-        return k + 1;
+        return k;
       });
       this.paintEventData = {
         labelmap2D: labelmap2D,
@@ -31322,31 +31318,14 @@ function (_BaseTool) {
         var previousPixeldataForImagesInRange = [];
 
         for (var i = 0; i < imagesInRange.length; i++) {
-          var imageIdIndex = imagesInRange[i].imageIdIndex;
-          var labelmap2DForImageIdIndex = getters.labelmap2DByImageIdIndex(labelmap3D, imageIdIndex, rows, columns);
+          var labelmap2DForImageIdIndex = getters.labelmap2DByImageIdIndex(labelmap3D, i, rows, columns);
           var previousPixeldata = labelmap2DForImageIdIndex.pixelData.slice();
           previousPixeldataForImagesInRange.push(previousPixeldata);
         }
 
         this.paintEventData.previousPixeldataForImagesInRange = previousPixeldataForImagesInRange;
       }
-    }
-    /**
-     * Paints the data to the labelmap.
-     *
-     * @private
-     * @param  {Object} evt The data object associated with the event.
-     * @returns {void}
-     */
 
-  }, {
-    key: "_paint",
-    value: function _paint(evt) {
-      var getters = segmentationModule.getters;
-      var eventData = evt.detail;
-      var image = eventData.image;
-      var rows = image.rows,
-          columns = image.columns;
       var _eventData$currentPoi = eventData.currentPoints.image,
           x = _eventData$currentPoi.x,
           y = _eventData$currentPoi.y;
@@ -31354,10 +31333,6 @@ function (_BaseTool) {
       if (x < 0 || x > columns || y < 0 || y > rows) {
         return;
       }
-
-      var _this$paintEventData = this.paintEventData,
-          labelmap3D = _this$paintEventData.labelmap3D,
-          imagesInRange = _this$paintEventData.imagesInRange;
 
       function getPixelData(i) {
         var labelmap2DForImageIdIndex = getters.labelmap2DByImageIdIndex(labelmap3D, i, rows, columns);
@@ -31367,14 +31342,22 @@ function (_BaseTool) {
       function getSegmentArray(i) {
         var p1 = getPixelData(i);
         return p1.map(function (x) {
-          return 1.0 * (x == labelmap3D.activeSegmentIndex);
+          return x == labelmap3D.activeSegmentIndex;
         });
       }
 
       function setSegmentArray(i, v) {
         var p1 = getPixelData(i);
+        var changecount = 0;
+        var changecandidates = v.reduce(function (a, b) {
+          return a + b;
+        }, 0);
 
         for (var j = 0; j < p1.length; j++) {
+          if (v[j] && p1[j] != labelmap3D.activeSegmentIndex) {
+            changecount++;
+          }
+
           p1[j] = v[j] ? labelmap3D.activeSegmentIndex : p1[j];
         }
       }
@@ -31397,27 +31380,25 @@ function (_BaseTool) {
 
       function interpolate(i, i1, i2, v1, v2) {
         var d = i2 - i1;
-        var out = v1.slice();
-
-        for (var j = 0; j < out.length; j++) {
-          out[j] = v1[j] * (i2 - i) / d + v2[j] * (i - i1) / d;
-        }
-
-        return out.map(Math.round);
+        return v1.map(function (x, j) {
+          return x * (i2 - i) / d + v2[j] * (i - i1) / d >= 0.5;
+        }); // var out = v1.slice();
+        // for (let j = 0; j < out.length; j++) {
+        //   out[j] = (v1[j] * (i2 - i)) / d + (v2[j] * (i - i1)) / d;
+        // }
+        // return out.map(Math.round);
       }
 
       var i1 = 0;
 
       while (i1 < imagesInRange.length - 2) {
-        console.log('i1', i1); //find first image i1 with active segment
-
+        //find first image i1 with active segment
         var v1 = getSegmentArray(i1); // get segment as binary vector v1
 
         if (v1.reduce(function (a, b) {
           return a + b;
         }, 0) == 0) {
           //empty, try next
-          console.log('empty');
           i1++;
           continue;
         }
@@ -31428,7 +31409,6 @@ function (_BaseTool) {
           return a + b;
         }, 0) > 0) {
           //next is not empty, no need to interpolate
-          console.log('next not empty');
           i1++;
           continue;
         }
@@ -31436,24 +31416,20 @@ function (_BaseTool) {
         var i2 = i1 + 2;
 
         while (i2 < imagesInRange.length) {
-          console.log('i2', i2); // find next image i2 with active segment
-
+          // find next image i2 with active segment
           var v2 = getSegmentArray(i2);
 
           if (v2.reduce(function (a, b) {
             return a + b;
           }, 0) == 0) {
             //empty, try next
-            console.log('i2 empty');
             i2++;
             continue;
           }
 
-          console.log('interpolating from ' + i1 + ' to ' + i2);
-
-          for (var i = i1 + 1; i < i2; i++) {
-            var vi = interpolate(i, i1, i2, v1, v2);
-            setSegmentArray(i, vi);
+          for (var _i = i1 + 1; _i < i2; _i++) {
+            var vi = interpolate(_i, i1, i2, v1, v2);
+            setSegmentArray(_i, vi);
           }
 
           break;
@@ -31462,23 +31438,13 @@ function (_BaseTool) {
         i1 = i2;
       }
 
-      _externalModules_js__WEBPACK_IMPORTED_MODULE_5__["default"].cornerstone.updateImage(evt.detail.element);
-    }
-  }, {
-    key: "_endPainting",
-    value: function _endPainting(evt) {
-      var _this$paintEventData2 = this.paintEventData,
-          labelmap3D = _this$paintEventData2.labelmap3D,
-          imagesInRange = _this$paintEventData2.imagesInRange;
       var operations = [];
-      var configuration = segmentationModule.configuration,
-          setters = segmentationModule.setters;
 
-      for (var i = 0; i < imagesInRange.length; i++) {
-        var imageIdIndex = imagesInRange[i].imageIdIndex;
-        var labelmap2D = labelmap3D.labelmaps2D[imageIdIndex]; // Grab the labels on the slice.
+      for (var _i2 = 0; _i2 < imagesInRange.length; _i2++) {
+        var imageIdIndex = imagesInRange[_i2];
+        var _labelmap2D = labelmap3D.labelmaps2D[imagesInRange[_i2]]; // Grab the labels on the slice.
 
-        var segmentSet = new Set(labelmap2D.pixelData);
+        var segmentSet = new Set(_labelmap2D.pixelData);
         var iterator = segmentSet.values();
         var segmentsOnLabelmap = [];
         var done = false;
@@ -31492,16 +31458,17 @@ function (_BaseTool) {
           }
         }
 
-        labelmap2D.segmentsOnLabelmap = segmentsOnLabelmap;
+        _labelmap2D.segmentsOnLabelmap = segmentsOnLabelmap;
+        _labelmap2D.canvasElementNeedsUpdate = true;
 
         if (configuration.storeHistory) {
-          var previousPixeldataForImagesInRange = this.paintEventData.previousPixeldataForImagesInRange;
-          var previousPixeldata = previousPixeldataForImagesInRange[i];
-          var _labelmap2D = labelmap3D.labelmaps2D[imageIdIndex];
-          var newPixelData = _labelmap2D.pixelData;
+          var _previousPixeldataForImagesInRange = this.paintEventData.previousPixeldataForImagesInRange;
+          var _previousPixeldata = _previousPixeldataForImagesInRange[_i2];
+          var _labelmap2D2 = labelmap3D.labelmaps2D[imageIdIndex];
+          var newPixelData = _labelmap2D2.pixelData;
           operations.push({
             imageIdIndex: imageIdIndex,
-            diff: Object(_util_segmentation__WEBPACK_IMPORTED_MODULE_8__["getDiffBetweenPixelData"])(previousPixeldata, newPixelData)
+            diff: Object(_util_segmentation__WEBPACK_IMPORTED_MODULE_8__["getDiffBetweenPixelData"])(_previousPixeldata, newPixelData)
           });
         }
       }
@@ -31511,6 +31478,7 @@ function (_BaseTool) {
       }
 
       Object(_util_segmentation__WEBPACK_IMPORTED_MODULE_8__["triggerLabelmapModifiedEvent"])(this.element);
+      _externalModules_js__WEBPACK_IMPORTED_MODULE_5__["default"].cornerstone.updateImage(evt.detail.element);
     }
   }]);
 

@@ -22,7 +22,7 @@ export default class InterpolationTool extends BaseTool {
     const defaultProps = {
       name: 'Interpolation',
       supportedInteractionTypes: ['Mouse', 'Touch'],
-      configuration: {},
+      configuration: { storeHistory: false },
       mixins: [],
     };
 
@@ -31,8 +31,6 @@ export default class InterpolationTool extends BaseTool {
 
   preMouseDownCallback(evt) {
     this._startPainting(evt);
-    this._paint(evt);
-    this._endPainting(evt);
 
     return true;
   }
@@ -45,16 +43,10 @@ export default class InterpolationTool extends BaseTool {
    * @returns {void}
    */
   _startPainting(evt) {
-    const { configuration, getters } = segmentationModule;
+    const { configuration, getters, setters } = segmentationModule;
     const eventData = evt.detail;
     const { element, image } = eventData;
-    const { cornerstone } = external;
-    const radius = configuration.radius;
     const { rows, columns } = image;
-    const pixelSpacing = Math.max(
-      image.rowPixelSpacing,
-      image.columnPixelSpacing
-    );
 
     const stackState = getToolState(element, 'stack');
     const stackData = stackState.data[0];
@@ -67,10 +59,7 @@ export default class InterpolationTool extends BaseTool {
       activeLabelmapIndex,
     } = getters.labelmap2D(element);
 
-    let imagesInRange = Array.from(
-      { length: imageIds.length },
-      (v, k) => k + 1
-    );
+    let imagesInRange = Array.from({ length: imageIds.length }, (v, k) => k);
 
     this.paintEventData = {
       labelmap2D,
@@ -84,10 +73,9 @@ export default class InterpolationTool extends BaseTool {
       const previousPixeldataForImagesInRange = [];
 
       for (let i = 0; i < imagesInRange.length; i++) {
-        const { imageIdIndex } = imagesInRange[i];
         const labelmap2DForImageIdIndex = getters.labelmap2DByImageIdIndex(
           labelmap3D,
-          imageIdIndex,
+          i,
           rows,
           columns
         );
@@ -99,27 +87,12 @@ export default class InterpolationTool extends BaseTool {
 
       this.paintEventData.previousPixeldataForImagesInRange = previousPixeldataForImagesInRange;
     }
-  }
 
-  /**
-   * Paints the data to the labelmap.
-   *
-   * @private
-   * @param  {Object} evt The data object associated with the event.
-   * @returns {void}
-   */
-  _paint(evt) {
-    const { getters } = segmentationModule;
-    const eventData = evt.detail;
-    const image = eventData.image;
-    const { rows, columns } = image;
     const { x, y } = eventData.currentPoints.image;
 
     if (x < 0 || x > columns || y < 0 || y > rows) {
       return;
     }
-
-    const { labelmap3D, imagesInRange } = this.paintEventData;
 
     function getPixelData(i) {
       const labelmap2DForImageIdIndex = getters.labelmap2DByImageIdIndex(
@@ -133,12 +106,17 @@ export default class InterpolationTool extends BaseTool {
 
     function getSegmentArray(i) {
       const p1 = getPixelData(i);
-      return p1.map(x => 1.0 * (x == labelmap3D.activeSegmentIndex));
+      return p1.map(x => x == labelmap3D.activeSegmentIndex);
     }
 
     function setSegmentArray(i, v) {
       var p1 = getPixelData(i);
+      var changecount = 0;
+      var changecandidates = v.reduce((a, b) => a + b, 0);
       for (let j = 0; j < p1.length; j++) {
+        if (v[j] && p1[j] != labelmap3D.activeSegmentIndex) {
+          changecount++;
+        }
         p1[j] = v[j] ? labelmap3D.activeSegmentIndex : p1[j];
       }
     }
@@ -162,43 +140,40 @@ export default class InterpolationTool extends BaseTool {
 
     function interpolate(i, i1, i2, v1, v2) {
       const d = i2 - i1;
-      var out = v1.slice();
-      for (let j = 0; j < out.length; j++) {
-        out[j] = (v1[j] * (i2 - i)) / d + (v2[j] * (i - i1)) / d;
-      }
-      return out.map(Math.round);
+      return v1.map(
+        (x, j) => (x * (i2 - i)) / d + (v2[j] * (i - i1)) / d >= 0.5
+      );
+      // var out = v1.slice();
+      // for (let j = 0; j < out.length; j++) {
+      //   out[j] = (v1[j] * (i2 - i)) / d + (v2[j] * (i - i1)) / d;
+      // }
+      // return out.map(Math.round);
     }
 
     let i1 = 0;
     while (i1 < imagesInRange.length - 2) {
-      console.log('i1', i1);
       //find first image i1 with active segment
       const v1 = getSegmentArray(i1); // get segment as binary vector v1
       if (v1.reduce((a, b) => a + b, 0) == 0) {
         //empty, try next
-        console.log('empty');
         i1++;
         continue;
       }
       const vnext = getSegmentArray(i1 + 1);
       if (vnext.reduce((a, b) => a + b, 0) > 0) {
         //next is not empty, no need to interpolate
-        console.log('next not empty');
         i1++;
         continue;
       }
       let i2 = i1 + 2;
       while (i2 < imagesInRange.length) {
-        console.log('i2', i2);
         // find next image i2 with active segment
         const v2 = getSegmentArray(i2);
         if (v2.reduce((a, b) => a + b, 0) == 0) {
           //empty, try next
-          console.log('i2 empty');
           i2++;
           continue;
         }
-        console.log('interpolating from ' + i1 + ' to ' + i2);
         for (let i = i1 + 1; i < i2; i++) {
           const vi = interpolate(i, i1, i2, v1, v2);
           setSegmentArray(i, vi);
@@ -208,17 +183,11 @@ export default class InterpolationTool extends BaseTool {
       i1 = i2;
     }
 
-    external.cornerstone.updateImage(evt.detail.element);
-  }
-
-  _endPainting(evt) {
-    const { labelmap3D, imagesInRange } = this.paintEventData;
     const operations = [];
-    const { configuration, setters } = segmentationModule;
 
     for (let i = 0; i < imagesInRange.length; i++) {
-      const { imageIdIndex } = imagesInRange[i];
-      const labelmap2D = labelmap3D.labelmaps2D[imageIdIndex];
+      const imageIdIndex = imagesInRange[i];
+      const labelmap2D = labelmap3D.labelmaps2D[imagesInRange[i]];
 
       // Grab the labels on the slice.
       const segmentSet = new Set(labelmap2D.pixelData);
@@ -238,6 +207,7 @@ export default class InterpolationTool extends BaseTool {
       }
 
       labelmap2D.segmentsOnLabelmap = segmentsOnLabelmap;
+      labelmap2D.canvasElementNeedsUpdate = true;
 
       if (configuration.storeHistory) {
         const { previousPixeldataForImagesInRange } = this.paintEventData;
@@ -258,5 +228,6 @@ export default class InterpolationTool extends BaseTool {
     }
 
     triggerLabelmapModifiedEvent(this.element);
+    external.cornerstone.updateImage(evt.detail.element);
   }
 }
