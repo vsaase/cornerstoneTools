@@ -1,6 +1,6 @@
 - This fork introduces Labelmap caching, which atm breaks the brush tools, see https://github.com/cornerstonejs/cornerstoneTools/issues/1360
 
-- an InterpolationTool is added that uses ITK.js for 3D segment interpolation. To build the wasm modules you have to have ITK 5 libraries installed and be able to run docker without sudo. Run `npm install` in the base folder. Then in the src/tools/segmentation folder run `npx itk-js build .` to build the modules. `npm run start` will copy the modules and itk assets to the dist folder, from where they can be used. ITK will search for its assets at /assets/itk
+- an InterpolationTool is added that uses ITK.js for 3D segment interpolation. To build the wasm modules you have to have CMake and ITK 5 libraries installed and be able to run docker without sudo. Run `npm install` in the base folder. Then in the src/tools/segmentation folder run `npx itk-js build .` to build the modules. `npm run start` will copy the modules and itk assets to the dist folder, from where they can be used. ITK will search for its assets at `/assets/itk`, which is configured in `config/webpack/itkConfigTest.js`.
 
 <div align="center">
 <h1>cornerstone-tools</h1>
