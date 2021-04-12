@@ -3,6 +3,9 @@ node_modules
 _book/
 build
 
+src/tools/segmentation/web-build
+examples/tools/itk
+
 ## Files
 .npmrc
 
@@ -12,6 +15,6 @@ build
 ## Output
 coverage/
 docs/latest/api
-#dist/
+dist/
 junit.xml
 .DS_Store
