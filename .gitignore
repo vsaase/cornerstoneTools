@@ -15,6 +15,6 @@ examples/tools/itk
 ## Output
 coverage/
 docs/latest/api
-dist/
+#dist/
 junit.xml
 .DS_Store
