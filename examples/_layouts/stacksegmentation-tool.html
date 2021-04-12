@@ -69,10 +69,6 @@ layout: default
     cornerstoneTools.addToolState(element, 'stack', stack);
   });
 
-  // Add the tool
-  const apiTool = cornerstoneTools[`${toolName}Tool`];
-  cornerstoneTools.addTool(apiTool);
-  cornerstoneTools.setToolActive(toolName, { mouseButtonMask: 1 });
 
   const freehandTool = cornerstoneTools.FreehandScissorsTool;
   cornerstoneTools.addTool(freehandTool);
@@ -81,6 +77,11 @@ layout: default
   const stackscrollTool = cornerstoneTools.StackScrollMouseWheelTool;
   cornerstoneTools.addTool(stackscrollTool);
   cornerstoneTools.setToolActive("StackScrollMouseWheel", { });
+
+  // Add the tool
+  const apiTool = cornerstoneTools[`${toolName}Tool`];
+  cornerstoneTools.addTool(apiTool);
+  cornerstoneTools.setToolActive(toolName, { mouseButtonMask: 2 });
 
   /***************************************************************************
    * UI & Boilerplate setup code

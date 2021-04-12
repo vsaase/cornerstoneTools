@@ -1,4 +1,4 @@
-/*! cornerstone-tools - 4.0.1 - 2021-04-09 | (c) 2017 Chris Hafey | https://github.com/cornerstonejs/cornerstoneTools */
+/*! cornerstone-tools - 4.0.1 - 2021-04-12 | (c) 2017 Chris Hafey | https://github.com/cornerstonejs/cornerstoneTools */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
@@ -74,7 +74,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "1a8199711df57719e8e2";
+/******/ 	var hotCurrentHash = "97c6f6d4fb802d9f3d0e";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -7042,7 +7042,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!******************!*\
   !*** ./index.js ***!
   \******************/
-/*! exports provided: AngleTool, ArrowAnnotateTool, BidirectionalTool, CircleRoiTool, CobbAngleTool, EllipticalRoiTool, FreehandRoiTool, LengthTool, ProbeTool, RectangleRoiTool, TextMarkerTool, BrushTool, SphericalBrushTool, RectangleScissorsTool, FreehandScissorsTool, CircleScissorsTool, CorrectionScissorsTool, CrosshairsTool, DoubleTapFitToWindowTool, DragProbeTool, EraserTool, FreehandRoiSculptorTool, MagnifyTool, OverlayTool, OrientationMarkersTool, PanMultiTouchTool, PanTool, ReferenceLinesTool, RotateTool, RotateTouchTool, ScaleOverlayTool, StackScrollMouseWheelTool, StackScrollMultiTouchTool, StackScrollTool, WwwcRegionTool, WwwcTool, ZoomMouseWheelTool, ZoomTool, ZoomTouchPinchTool, init, stackPrefetch, stackRenderers, playClip, stopClip, store, getModule, getToolForElement, addTool, addToolForElement, removeTool, removeToolForElement, setToolOptions, setToolOptionsForElement, isToolActiveForElement, setToolActive, setToolActiveForElement, setToolEnabled, setToolEnabledForElement, setToolDisabled, setToolDisabledForElement, setToolPassive, setToolPassiveForElement, addToolState, getToolState, removeToolState, clearToolState, setElementToolStateManager, getElementToolStateManager, textStyle, toolStyle, toolColors, toolCoordinates, stackSpecificStateManager, newStackSpecificToolStateManager, addStackStateManager, loadHandlerManager, newImageIdSpecificToolStateManager, globalImageIdSpecificToolStateManager, newFrameOfReferenceSpecificToolStateManager, globalFrameOfReferenceSpecificToolStateManager, forceEnabledElementResize, orientation, SaveAs, enableLogger, disableLogger, register, registerSome, wwwcSynchronizer, updateImageSynchronizer, Synchronizer, stackScrollSynchronizer, stackImagePositionSynchronizer, stackImagePositionOffsetSynchronizer, stackImageIndexSynchronizer, panZoomSynchronizer, requestPoolManager, importInternal, external, EVENTS, version, import, default */
+/*! exports provided: AngleTool, ArrowAnnotateTool, BidirectionalTool, CircleRoiTool, CobbAngleTool, EllipticalRoiTool, FreehandRoiTool, LengthTool, ProbeTool, RectangleRoiTool, TextMarkerTool, BrushTool, SphericalBrushTool, RectangleScissorsTool, FreehandScissorsTool, CircleScissorsTool, CorrectionScissorsTool, InterpolationTool, CrosshairsTool, DoubleTapFitToWindowTool, DragProbeTool, EraserTool, FreehandRoiSculptorTool, MagnifyTool, OverlayTool, OrientationMarkersTool, PanMultiTouchTool, PanTool, ReferenceLinesTool, RotateTool, RotateTouchTool, ScaleOverlayTool, StackScrollMouseWheelTool, StackScrollMultiTouchTool, StackScrollTool, WwwcRegionTool, WwwcTool, ZoomMouseWheelTool, ZoomTool, ZoomTouchPinchTool, init, stackPrefetch, stackRenderers, playClip, stopClip, store, getModule, getToolForElement, addTool, addToolForElement, removeTool, removeToolForElement, setToolOptions, setToolOptionsForElement, isToolActiveForElement, setToolActive, setToolActiveForElement, setToolEnabled, setToolEnabledForElement, setToolDisabled, setToolDisabledForElement, setToolPassive, setToolPassiveForElement, addToolState, getToolState, removeToolState, clearToolState, setElementToolStateManager, getElementToolStateManager, textStyle, toolStyle, toolColors, toolCoordinates, stackSpecificStateManager, newStackSpecificToolStateManager, addStackStateManager, loadHandlerManager, newImageIdSpecificToolStateManager, globalImageIdSpecificToolStateManager, newFrameOfReferenceSpecificToolStateManager, globalFrameOfReferenceSpecificToolStateManager, forceEnabledElementResize, orientation, SaveAs, enableLogger, disableLogger, register, registerSome, wwwcSynchronizer, updateImageSynchronizer, Synchronizer, stackScrollSynchronizer, stackImagePositionSynchronizer, stackImagePositionOffsetSynchronizer, stackImageIndexSynchronizer, panZoomSynchronizer, requestPoolManager, importInternal, external, EVENTS, version, import, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7082,6 +7082,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CircleScissorsTool", function() { return _tools_segmentation_index_js__WEBPACK_IMPORTED_MODULE_1__["CircleScissorsTool"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CorrectionScissorsTool", function() { return _tools_segmentation_index_js__WEBPACK_IMPORTED_MODULE_1__["CorrectionScissorsTool"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "InterpolationTool", function() { return _tools_segmentation_index_js__WEBPACK_IMPORTED_MODULE_1__["InterpolationTool"]; });
 
 /* harmony import */ var _tools_index_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./tools/index.js */ "./tools/index.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CrosshairsTool", function() { return _tools_index_js__WEBPACK_IMPORTED_MODULE_2__["CrosshairsTool"]; });

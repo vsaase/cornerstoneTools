@@ -343,6 +343,7 @@ export {
   FreehandScissorsTool,
   CircleScissorsTool,
   CorrectionScissorsTool,
+  InterpolationTool,
   // ~ Tools
   CrosshairsTool,
   DoubleTapFitToWindowTool,
