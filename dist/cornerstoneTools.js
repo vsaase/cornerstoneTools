@@ -74,7 +74,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "f1e979a94886f5fa145b";
+/******/ 	var hotCurrentHash = "249c210032a7ee264f50";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -38229,7 +38229,7 @@ function (_BaseTool) {
       var itkImage = new itk.Image(imageType);
       itkImage.data = currentVolumePixelbuffer;
       itkImage.size = [columns, rows, imagesInRange.length];
-      itk.runPipelineBrowser(null, 'interpolation', [], [{
+      itk.runPipelineBrowser(null, 'interpolation', [labelmap3D.activeSegmentIndex.toString()], [{
         path: 'output.json',
         type: itk.IOTypes.Image
       }], [{
@@ -38241,7 +38241,6 @@ function (_BaseTool) {
             stderr = _ref.stderr,
             outputs = _ref.outputs,
             webWorker = _ref.webWorker;
-        console.log(outputs);
 
         for (var _i = 0; _i < imagesInRange.length; _i++) {
           var currentVolumePixelbuffer = outputs[0].data.data;
@@ -38268,121 +38267,7 @@ function (_BaseTool) {
 
         Object(_util_segmentation__WEBPACK_IMPORTED_MODULE_8__["triggerLabelmapModifiedEvent"])(element);
         _externalModules_js__WEBPACK_IMPORTED_MODULE_5__["default"].cornerstone.updateImage(evt.detail.element);
-      }); // function getSegmentArray(i) {
-      //   const p1 = getPixelData(i);
-      //   return p1.map(x => x == labelmap3D.activeSegmentIndex);
-      // }
-      // function setSegmentArray(i, v) {
-      //   var p1 = getPixelData(i);
-      //   var changecount = 0;
-      //   var changecandidates = v.reduce((a, b) => a + b, 0);
-      //   for (let j = 0; j < p1.length; j++) {
-      //     if (v[j] && p1[j] != labelmap3D.activeSegmentIndex) {
-      //       changecount++;
-      //     }
-      //     p1[j] = v[j] ? labelmap3D.activeSegmentIndex : p1[j];
-      //   }
-      // }
-
-      /* Algorithm for interpolation
-        find first image i1 with active segment
-        save segment as binary vector v1
-         until i2 > imagesInRange
-          find next image i2 with active segment
-          save segment as binary vector v2
-          d = i2 - i1
-          if d > 1
-            for i in i1+1 to i2-1
-              for j in 1:length(v1)
-                if v1[j] * (i2 - i)/d + v2[j] * (i - i1)/d > 0.5
-                  v[j] = activesegment
-          v1 = v2
-          i1 = i2
-      */
-      // function interpolate(i, i1, i2, v1, v2) {
-      //   const d = i2 - i1;
-      //   return v1.map(
-      //     (x, j) => (x * (i2 - i)) / d + (v2[j] * (i - i1)) / d >= 0.5
-      //   );
-      //   // var out = v1.slice();
-      //   // for (let j = 0; j < out.length; j++) {
-      //   //   out[j] = (v1[j] * (i2 - i)) / d + (v2[j] * (i - i1)) / d;
-      //   // }
-      //   // return out.map(Math.round);
-      // }
-      // let i1 = 0;
-      // while (i1 < imagesInRange.length - 2) {
-      //   //find first image i1 with active segment
-      //   const v1 = getSegmentArray(i1); // get segment as binary vector v1
-      //   if (v1.reduce((a, b) => a + b, 0) == 0) {
-      //     //empty, try next
-      //     i1++;
-      //     continue;
-      //   }
-      //   const vnext = getSegmentArray(i1 + 1);
-      //   if (vnext.reduce((a, b) => a + b, 0) > 0) {
-      //     //next is not empty, no need to interpolate
-      //     i1++;
-      //     continue;
-      //   }
-      //   let i2 = i1 + 2;
-      //   while (i2 < imagesInRange.length) {
-      //     // find next image i2 with active segment
-      //     const v2 = getSegmentArray(i2);
-      //     if (v2.reduce((a, b) => a + b, 0) == 0) {
-      //       //empty, try next
-      //       i2++;
-      //       continue;
-      //     }
-      //     for (let i = i1 + 1; i < i2; i++) {
-      //       const vi = interpolate(i, i1, i2, v1, v2);
-      //       setSegmentArray(i, vi);
-      //     }
-      //     break;
-      //   }
-      //   i1 = i2;
-      // }
-
-      function _finally() {
-        var operations = [];
-
-        for (var _i2 = 0; _i2 < imagesInRange.length; _i2++) {
-          var imageIdIndex = imagesInRange[_i2];
-          var _labelmap2D2 = labelmap3D.labelmaps2D[imageIdIndex]; // Grab the labels on the slice.
-
-          var segmentSet = new Set(_labelmap2D2.pixelData);
-          var iterator = segmentSet.values();
-          var segmentsOnLabelmap = [];
-          var done = false;
-
-          while (!done) {
-            var next = iterator.next();
-            done = next.done;
-
-            if (!done) {
-              segmentsOnLabelmap.push(next.value);
-            }
-          }
-
-          _labelmap2D2.segmentsOnLabelmap = segmentsOnLabelmap;
-          _labelmap2D2.canvasElementNeedsUpdate = true; // if (configuration.storeHistory) {
-          //   const { previousPixeldataForImagesInRange } = this.paintEventData;
-          //   const previousPixeldata = previousPixeldataForImagesInRange[i];
-          //   const labelmap2D = labelmap3D.labelmaps2D[imageIdIndex];
-          //   const newPixelData = labelmap2D.pixelData;
-          //   operations.push({
-          //     imageIdIndex,
-          //     diff: getDiffBetweenPixelData(previousPixeldata, newPixelData),
-          //   });
-          // }
-        } // if (configuration.storeHistory) {
-        //   setters.pushState(this.element, operations);
-        // }
-
-
-        Object(_util_segmentation__WEBPACK_IMPORTED_MODULE_8__["triggerLabelmapModifiedEvent"])(this.element);
-        _externalModules_js__WEBPACK_IMPORTED_MODULE_5__["default"].cornerstone.updateImage(evt.detail.element);
-      }
+      });
     }
   }]);
 

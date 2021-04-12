@@ -5,6 +5,7 @@
 #include <cstdlib>
 #include "itkJSONImageIO.h"
 #include <string>
+#include <fstream>
 
 // from https://github.com/KitwareMedical/ITKMorphologicalContourInterpolation/blob/master/test/itkMorphologicalContourInterpolationTest.cxx
 template <typename ImageType>
@@ -13,10 +14,8 @@ void doTest(std::string inFilename, std::string outFilename, bool UseDistanceTra
   using ReaderType = itk::ImageFileReader<ImageType>;
   typename ReaderType::Pointer reader = ReaderType::New();
   reader->SetFileName(inFilename);
-  std::cout << "0" << std::endl;
   reader->Update();
 
-  std::cout << "1" << std::endl;
   typename ImageType::Pointer test = reader->GetOutput();
 
   // region for partial coverage
@@ -34,20 +33,19 @@ void doTest(std::string inFilename, std::string outFilename, bool UseDistanceTra
   mci->SetUseBallStructuringElement(ball);
   mci->SetAxis(axis);
   mci->SetLabel(label);
-  std::cout << "2" << std::endl;
 
   using WriterType = itk::ImageFileWriter<ImageType>;
   typename WriterType::Pointer writer = WriterType::New();
   writer->SetFileName(outFilename);
   writer->SetInput(mci->GetOutput());
   writer->SetUseCompression(true);
-  std::cout << "3" << std::endl;
   writer->Update();
 }
 
-int main()
+int main(int argc, char *argv[])
 {
-  std::cout << "Hello world!" << std::endl;
+  std::cout << "Starting Interpolation with ITK.JS!" << std::endl;
+  unsigned int label = atoi(argv[1]);
 
   itk::JSONImageIO::Pointer imageIO = itk::JSONImageIO::New();
   imageIO->SetFileName("input.json");
@@ -64,7 +62,8 @@ int main()
   std::cout << componentType << std::endl;
   std::cout << pixelType << std::endl;
   std::cout << imageDimension << std::endl;
+  std::cout << argv[1] << std::endl;
 
-  doTest<itk::Image<unsigned short, 3>>("input.json", "output.json", false, true, -1, 0);
+  doTest<itk::Image<unsigned short, 3>>("input.json", "output.json", false, true, 2, label);
   return 0;
 }
