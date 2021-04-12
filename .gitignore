@@ -4,7 +4,7 @@ _book/
 build
 
 src/tools/segmentation/web-build
-examples/tools/itk
+examples/assets/itk
 
 ## Files
 .npmrc
@@ -16,5 +16,6 @@ examples/tools/itk
 coverage/
 docs/latest/api
 #dist/
+dist/*hot-update*
 junit.xml
 .DS_Store

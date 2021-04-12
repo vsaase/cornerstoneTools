@@ -56,10 +56,15 @@ module.exports = {
       },
     ],
   },
+  resolve: {
+    alias: {
+      './itkConfig$': path.resolve(__dirname, 'itkConfigTest.js'),
+    },
+  },
   plugins: [
     bannerPlugin(),
     new CopyPlugin({
-      patterns: [path.join('examples', 'tools'), 'dist']
+      patterns: [path.join('examples', 'assets'), 'dist']
         .map(p => [
           {
             from: path.join(basedir, 'node_modules', 'itk', 'WebWorkers'),

@@ -74,7 +74,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "e96c7c93ab432931e2dc";
+/******/ 	var hotCurrentHash = "ea3c59b77bec20c60e52";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -806,6 +806,22 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ })
 /************************************************************************/
 /******/ ({
+
+/***/ "../config/webpack/itkConfigTest.js":
+/*!******************************************!*\
+  !*** ../config/webpack/itkConfigTest.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var itkConfig = {
+  itkModulesPath: '/assets/itk'
+};
+/* harmony default export */ __webpack_exports__["default"] = (itkConfig);
+
+/***/ }),
 
 /***/ "../node_modules/@babel/runtime/helpers/arrayWithHoles.js":
 /*!****************************************************************!*\
@@ -3771,7 +3787,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var webworker_promise__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(webworker_promise__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "../node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _itkConfig__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./itkConfig */ "../node_modules/itk/itkConfig.js");
+/* harmony import */ var _itkConfig__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./itkConfig */ "../config/webpack/itkConfigTest.js");
 
 
  // Internal function to create a web worker promise
@@ -4529,30 +4545,6 @@ itk.writeMeshArrayBuffer = _writeMeshArrayBuffer_js__WEBPACK_IMPORTED_MODULE_47_
 // do not pollute the global one.
 
 window.itk = itk;
-
-/***/ }),
-
-/***/ "../node_modules/itk/itkConfig.js":
-/*!****************************************!*\
-  !*** ../node_modules/itk/itkConfig.js ***!
-  \****************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-// itkModulesPath is the path that contains the directories
-//
-// - WebWorkers/
-// - ImageIOs/
-// - MeshIOs/
-// - PolyDataIOs/
-//
-var itkConfig = {
-  itkModulesPath: 'itk'
-};
-/* harmony default export */ __webpack_exports__["default"] = (itkConfig);
 
 /***/ }),
 
@@ -6206,7 +6198,7 @@ var readFile = function readFile(webWorker, file) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _createWebworkerPromise__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./createWebworkerPromise */ "../node_modules/itk/createWebworkerPromise.js");
-/* harmony import */ var _itkConfig__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./itkConfig */ "../node_modules/itk/itkConfig.js");
+/* harmony import */ var _itkConfig__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./itkConfig */ "../config/webpack/itkConfigTest.js");
 
 
 
@@ -6247,7 +6239,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _createWebworkerPromise__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./createWebworkerPromise */ "../node_modules/itk/createWebworkerPromise.js");
 /* harmony import */ var promise_file_reader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! promise-file-reader */ "../node_modules/promise-file-reader/PromiseFileReader.js");
 /* harmony import */ var promise_file_reader__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(promise_file_reader__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _itkConfig__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./itkConfig */ "../node_modules/itk/itkConfig.js");
+/* harmony import */ var _itkConfig__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./itkConfig */ "../config/webpack/itkConfigTest.js");
 
 
 
@@ -6297,7 +6289,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var promise_file_reader__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(promise_file_reader__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _WorkerPool__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./WorkerPool */ "../node_modules/itk/WorkerPool.js");
 /* harmony import */ var _stackImages__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./stackImages */ "../node_modules/itk/stackImages.js");
-/* harmony import */ var _itkConfig__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./itkConfig */ "../node_modules/itk/itkConfig.js");
+/* harmony import */ var _itkConfig__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./itkConfig */ "../config/webpack/itkConfigTest.js");
 
 
 /* eslint-disable-next-line no-unused-vars */
@@ -6477,7 +6469,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _createWebworkerPromise__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./createWebworkerPromise */ "../node_modules/itk/createWebworkerPromise.js");
 /* harmony import */ var promise_file_reader__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! promise-file-reader */ "../node_modules/promise-file-reader/PromiseFileReader.js");
 /* harmony import */ var promise_file_reader__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(promise_file_reader__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _itkConfig__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./itkConfig */ "../node_modules/itk/itkConfig.js");
+/* harmony import */ var _itkConfig__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./itkConfig */ "../config/webpack/itkConfigTest.js");
 
 
 
@@ -6620,7 +6612,7 @@ function _readImageHTTP() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _createWebworkerPromise__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./createWebworkerPromise */ "../node_modules/itk/createWebworkerPromise.js");
-/* harmony import */ var _itkConfig__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./itkConfig */ "../node_modules/itk/itkConfig.js");
+/* harmony import */ var _itkConfig__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./itkConfig */ "../config/webpack/itkConfigTest.js");
 
 
 
@@ -6661,7 +6653,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _createWebworkerPromise__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./createWebworkerPromise */ "../node_modules/itk/createWebworkerPromise.js");
 /* harmony import */ var promise_file_reader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! promise-file-reader */ "../node_modules/promise-file-reader/PromiseFileReader.js");
 /* harmony import */ var promise_file_reader__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(promise_file_reader__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _itkConfig__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./itkConfig */ "../node_modules/itk/itkConfig.js");
+/* harmony import */ var _itkConfig__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./itkConfig */ "../config/webpack/itkConfigTest.js");
 
 
 
@@ -6705,7 +6697,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _createWebworkerPromise__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./createWebworkerPromise */ "../node_modules/itk/createWebworkerPromise.js");
 /* harmony import */ var promise_file_reader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! promise-file-reader */ "../node_modules/promise-file-reader/PromiseFileReader.js");
 /* harmony import */ var promise_file_reader__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(promise_file_reader__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _itkConfig__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./itkConfig */ "../node_modules/itk/itkConfig.js");
+/* harmony import */ var _itkConfig__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./itkConfig */ "../config/webpack/itkConfigTest.js");
 
 
 
@@ -6755,7 +6747,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _extensionToPolyDataIO__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_extensionToPolyDataIO__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _IOTypes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./IOTypes */ "../node_modules/itk/IOTypes.js");
 /* harmony import */ var _IOTypes__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_IOTypes__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _itkConfig__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./itkConfig */ "../node_modules/itk/itkConfig.js");
+/* harmony import */ var _itkConfig__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./itkConfig */ "../config/webpack/itkConfigTest.js");
 
 
 
@@ -6846,7 +6838,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _extensionToPolyDataIO__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_extensionToPolyDataIO__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _IOTypes__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./IOTypes */ "../node_modules/itk/IOTypes.js");
 /* harmony import */ var _IOTypes__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_IOTypes__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _itkConfig__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./itkConfig */ "../node_modules/itk/itkConfig.js");
+/* harmony import */ var _itkConfig__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./itkConfig */ "../config/webpack/itkConfigTest.js");
 
 
 
@@ -6940,7 +6932,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _extensionToPolyDataIO__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_extensionToPolyDataIO__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _IOTypes__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./IOTypes */ "../node_modules/itk/IOTypes.js");
 /* harmony import */ var _IOTypes__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_IOTypes__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _itkConfig__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./itkConfig */ "../node_modules/itk/itkConfig.js");
+/* harmony import */ var _itkConfig__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./itkConfig */ "../config/webpack/itkConfigTest.js");
 
 
 
@@ -7034,7 +7026,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "../node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _createWebworkerPromise__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./createWebworkerPromise */ "../node_modules/itk/createWebworkerPromise.js");
-/* harmony import */ var _itkConfig__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./itkConfig */ "../node_modules/itk/itkConfig.js");
+/* harmony import */ var _itkConfig__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./itkConfig */ "../config/webpack/itkConfigTest.js");
 /* harmony import */ var _IOTypes__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./IOTypes */ "../node_modules/itk/IOTypes.js");
 /* harmony import */ var _IOTypes__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_IOTypes__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _runPipelineEmscripten__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./runPipelineEmscripten */ "../node_modules/itk/runPipelineEmscripten.js");
@@ -7655,7 +7647,7 @@ var writeArrayBuffer = function writeArrayBuffer(webWorker, useCompression, imag
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _createWebworkerPromise__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./createWebworkerPromise */ "../node_modules/itk/createWebworkerPromise.js");
-/* harmony import */ var _itkConfig__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./itkConfig */ "../node_modules/itk/itkConfig.js");
+/* harmony import */ var _itkConfig__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./itkConfig */ "../config/webpack/itkConfigTest.js");
 /* harmony import */ var _getTransferable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./getTransferable */ "../node_modules/itk/getTransferable.js");
 
 
@@ -7704,7 +7696,7 @@ var writeImageArrayBuffer = function writeImageArrayBuffer(webWorker, useCompres
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _createWebworkerPromise__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./createWebworkerPromise */ "../node_modules/itk/createWebworkerPromise.js");
-/* harmony import */ var _itkConfig__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./itkConfig */ "../node_modules/itk/itkConfig.js");
+/* harmony import */ var _itkConfig__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./itkConfig */ "../config/webpack/itkConfigTest.js");
 
 
 
