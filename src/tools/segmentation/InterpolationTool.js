@@ -34,9 +34,8 @@ export default class InterpolationTool extends BaseTool {
     super(props, defaultProps);
   }
 
-  preMouseDownCallback(evt) {
+  activeCallback(evt) {
     this._startPainting(evt);
-
     return true;
   }
 
