@@ -49,6 +49,9 @@ export default class InterpolationTool extends BaseTool {
   _startPainting(element) {
     const { configuration, getters, setters } = segmentationModule;
     const enabledElement = external.cornerstone.getEnabledElement(element);
+    if (enabledElement.image === undefined) {
+      return;
+    }
     const { rows, columns } = enabledElement.image;
 
     const stackState = getToolState(element, 'stack');

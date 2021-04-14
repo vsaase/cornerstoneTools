@@ -74,7 +74,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "73380cce510da1bb564d";
+/******/ 	var hotCurrentHash = "10d66604620b8693d460";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -38168,6 +38168,11 @@ function (_BaseTool) {
           getters = segmentationModule.getters,
           setters = segmentationModule.setters;
       var enabledElement = _externalModules_js__WEBPACK_IMPORTED_MODULE_5__["default"].cornerstone.getEnabledElement(element);
+
+      if (enabledElement.image === undefined) {
+        return;
+      }
+
       var _enabledElement$image = enabledElement.image,
           rows = _enabledElement$image.rows,
           columns = _enabledElement$image.columns;
