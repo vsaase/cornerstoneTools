@@ -1,4 +1,4 @@
-/*! cornerstone-tools - 4.0.1 - 2021-04-12 | (c) 2017 Chris Hafey | https://github.com/cornerstonejs/cornerstoneTools */
+/*! cornerstone-tools - 4.0.1 - 2021-04-14 | (c) 2017 Chris Hafey | https://github.com/cornerstonejs/cornerstoneTools */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
@@ -74,7 +74,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "ea3c59b77bec20c60e52";
+/******/ 	var hotCurrentHash = "73380cce510da1bb564d";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -38147,9 +38147,9 @@ function (_BaseTool) {
   }
 
   _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(InterpolationTool, [{
-    key: "preMouseDownCallback",
-    value: function preMouseDownCallback(evt) {
-      this._startPainting(evt);
+    key: "activeCallback",
+    value: function activeCallback(element) {
+      this._startPainting(element);
 
       return true;
     }
@@ -38163,15 +38163,14 @@ function (_BaseTool) {
 
   }, {
     key: "_startPainting",
-    value: function _startPainting(evt) {
+    value: function _startPainting(element) {
       var configuration = segmentationModule.configuration,
           getters = segmentationModule.getters,
           setters = segmentationModule.setters;
-      var eventData = evt.detail;
-      var element = eventData.element,
-          image = eventData.image;
-      var rows = image.rows,
-          columns = image.columns;
+      var enabledElement = _externalModules_js__WEBPACK_IMPORTED_MODULE_5__["default"].cornerstone.getEnabledElement(element);
+      var _enabledElement$image = enabledElement.image,
+          rows = _enabledElement$image.rows,
+          columns = _enabledElement$image.columns;
       var stackState = Object(_stateManagement_toolState_js__WEBPACK_IMPORTED_MODULE_9__["getToolState"])(element, 'stack');
       var stackData = stackState.data[0];
       var imageIds = stackData.imageIds;
@@ -38194,13 +38193,6 @@ function (_BaseTool) {
         activeLabelmapIndex: activeLabelmapIndex,
         imagesInRange: imagesInRange
       };
-      var _eventData$currentPoi = eventData.currentPoints.image,
-          x = _eventData$currentPoi.x,
-          y = _eventData$currentPoi.y;
-
-      if (x < 0 || x > columns || y < 0 || y > rows) {
-        return;
-      }
 
       function getPixelData(i) {
         var labelmap2DForImageIdIndex = getters.labelmap2DByImageIdIndex(labelmap3D, i, rows, columns);
@@ -38258,7 +38250,7 @@ function (_BaseTool) {
         }
 
         Object(_util_segmentation__WEBPACK_IMPORTED_MODULE_8__["triggerLabelmapModifiedEvent"])(element);
-        _externalModules_js__WEBPACK_IMPORTED_MODULE_5__["default"].cornerstone.updateImage(evt.detail.element);
+        _externalModules_js__WEBPACK_IMPORTED_MODULE_5__["default"].cornerstone.updateImage(element);
       });
     }
   }]);

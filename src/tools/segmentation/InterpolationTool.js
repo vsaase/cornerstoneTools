@@ -34,8 +34,8 @@ export default class InterpolationTool extends BaseTool {
     super(props, defaultProps);
   }
 
-  activeCallback(evt) {
-    this._startPainting(evt);
+  activeCallback(element) {
+    this._startPainting(element);
     return true;
   }
 
@@ -46,11 +46,10 @@ export default class InterpolationTool extends BaseTool {
    * @param {Object} evt - The event.
    * @returns {void}
    */
-  _startPainting(evt) {
+  _startPainting(element) {
     const { configuration, getters, setters } = segmentationModule;
-    const eventData = evt.detail;
-    const { element, image } = eventData;
-    const { rows, columns } = image;
+    const enabledElement = external.cornerstone.getEnabledElement(element);
+    const { rows, columns } = enabledElement.image;
 
     const stackState = getToolState(element, 'stack');
     const stackData = stackState.data[0];
@@ -72,12 +71,6 @@ export default class InterpolationTool extends BaseTool {
       activeLabelmapIndex,
       imagesInRange,
     };
-
-    const { x, y } = eventData.currentPoints.image;
-
-    if (x < 0 || x > columns || y < 0 || y > rows) {
-      return;
-    }
 
     function getPixelData(i) {
       const labelmap2DForImageIdIndex = getters.labelmap2DByImageIdIndex(
@@ -165,7 +158,7 @@ export default class InterpolationTool extends BaseTool {
         }
 
         triggerLabelmapModifiedEvent(element);
-        external.cornerstone.updateImage(evt.detail.element);
+        external.cornerstone.updateImage(element);
       });
   }
 }
