@@ -4,29 +4,26 @@ import { getModule } from './../../store/index.js';
 import { triggerLabelmapModifiedEvent } from './../../util/segmentation';
 import { getToolState } from '../../stateManagement/toolState.js';
 import { getLogger } from '../../util/logger.js';
-import { getDiffBetweenPixelData } from '../../util/segmentation';
 
 import 'itk';
 import IntTypes from 'itk/IntTypes';
 import PixelTypes from 'itk/PixelTypes';
 
 const itk = window.itk;
-
-const logger = getLogger('tools:InterpolationTool');
-
+const logger = getLogger('tools:ITKSegmentationTool');
 const segmentationModule = getModule('segmentation');
 
 /**
  * @public
- * @class InterpolationTool
+ * @class ITKSegmentationTool
  * @memberof Tools
  * @classdesc Tool for interpolating between segments across images.
  * @extends Tools.Base.BaseTool
  */
-export default class InterpolationTool extends BaseTool {
+export default class ITKSegmentationTool extends BaseTool {
   constructor(props = {}) {
     const defaultProps = {
-      name: 'Interpolation',
+      name: 'ITKSegmentation',
       supportedInteractionTypes: ['Mouse', 'Touch'],
       configuration: { storeHistory: false },
       mixins: [],
@@ -35,8 +32,10 @@ export default class InterpolationTool extends BaseTool {
     super(props, defaultProps);
   }
 
-  activeCallback(element) {
-    this._startPainting(element);
+  preMouseDownCallback(evt) {
+    const eventData = evt.detail;
+
+    this._startPainting(eventData.element);
 
     return true;
   }
@@ -78,7 +77,7 @@ export default class InterpolationTool extends BaseTool {
       imagesInRange,
     };
 
-    function getPixelData(i) {
+    function getSegmentationPixelData(i) {
       const labelmap2DForImageIdIndex = getters.labelmap2DByImageIdIndex(
         labelmap3D,
         i,
@@ -87,6 +86,12 @@ export default class InterpolationTool extends BaseTool {
       );
 
       return labelmap2DForImageIdIndex.pixelData;
+    }
+
+    function getImagePixelData(i) {
+      const image = external.cornerstone.loadAndCacheImage(imageIds[i]);
+
+      return image.getPixelData();
     }
 
     const currentImagePixelbuffer = getPixelData(currentImageIdIndex);
