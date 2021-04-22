@@ -1,8 +1,9 @@
 #include <iostream>
 #include "itkImageFileReader.h"
 #include "itkImageFileWriter.h"
-#include "itkKLMRegionGrowImageFilter.h"
 #include "itkConfidenceConnectedImageFilter.h"
+#include "itkBinaryMorphologicalClosingImageFilter.h"
+#include "itkBinaryBallStructuringElement.h"
 #include <cstdlib>
 #include "itkJSONImageIO.h"
 #include <string>
@@ -30,7 +31,7 @@ void doSegmentation(std::string inFilename, std::string outFilename, unsigned in
   std::cout << "Creating Confidence Connected filter" << std::endl;
   using ConfidenceConnectedFilterType = itk::ConfidenceConnectedImageFilter<ImageType, ImageType>;
   typename ConfidenceConnectedFilterType::Pointer confidenceConnectedFilter = ConfidenceConnectedFilterType::New();
-  confidenceConnectedFilter->SetInitialNeighborhoodRadius(3);
+  confidenceConnectedFilter->SetInitialNeighborhoodRadius(1);
   confidenceConnectedFilter->SetMultiplier(1);
   confidenceConnectedFilter->SetNumberOfIterations(0);
   confidenceConnectedFilter->SetReplaceValue(1);
@@ -39,35 +40,27 @@ void doSegmentation(std::string inFilename, std::string outFilename, unsigned in
   confidenceConnectedFilter->SetSeed(pixelIndex);
   confidenceConnectedFilter->SetInput(reader->GetOutput());
 
-  // std::cout << "Creating KLM filter" << std::endl;
-  // using filterType = itk::KLMRegionGrowImageFilter<ImageType, ImageType>;
-  // typename filterType::Pointer filter = filterType::New();
-  // filter->SetInput(reader->GetOutput());
-  // filter->Update();
+  using StructuringElementType = itk::FlatStructuringElement<ImageType::ImageDimension>;
+  typename StructuringElementType::RadiusType elementRadius;
+  elementRadius.Fill(3);
+  StructuringElementType structuringElement = StructuringElementType::Box(elementRadius);
+
+  using BinaryMorphologicalClosingImageFilterType =
+      itk::BinaryMorphologicalClosingImageFilter<ImageType, ImageType, StructuringElementType>;
+  typename BinaryMorphologicalClosingImageFilterType::Pointer closingFilter = BinaryMorphologicalClosingImageFilterType::New();
+  closingFilter->SetInput(confidenceConnectedFilter->GetOutput());
+  closingFilter->SetKernel(structuringElement);
+  closingFilter->SetForegroundValue(1);
 
   std::cout << "Creating Output" << std::endl;
   using WriterType = itk::ImageFileWriter<ImageType>;
   typename WriterType::Pointer writer = WriterType::New();
   writer->SetFileName(outFilename);
-  writer->SetInput(confidenceConnectedFilter->GetOutput());
+  writer->SetInput(closingFilter->GetOutput());
   writer->SetUseCompression(true);
 
   std::cout << "Running Pipeline" << std::endl;
-  try
-  {
-    writer->Update();
-  }
-  catch (itk::ExceptionObject &err)
-  {
-    std::cerr << "ExceptionObject caught !" << std::endl;
-    std::cerr << err << std::endl;
-    std::cout << "ExceptionObject caught !" << std::endl;
-    std::cout << err << std::endl;
-  }
-  catch (...) // catch-all handler
-  {
-    std::cout << "We caught an exception of an undetermined type\n";
-  }
+  writer->Update();
   std::cout << "Finished" << std::endl;
 }
 

@@ -1,5 +1,5 @@
 ---
-layout: stacksegmentation-tool
+layout: stacksegmentation-tool2
 title: ITKSegmentation Tool
 toolName: ITKSegmentation
 toolType: segmentation

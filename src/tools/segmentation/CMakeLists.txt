@@ -7,8 +7,8 @@ find_package(ITK REQUIRED
   COMPONENTS ${io_components}
   ITKImageGrid
   ITKImageFunction
-  ITKKLMRegionGrowing
   ITKRegionGrowing
+  ITKBinaryMathematicalMorphology
   MorphologicalContourInterpolation
 )
 include(${ITK_USE_FILE})

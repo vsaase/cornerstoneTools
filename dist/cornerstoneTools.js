@@ -74,7 +74,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "ab37a5a1a2542a4d82ab";
+/******/ 	var hotCurrentHash = "6ccced44f663bf5ff5ea";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -38177,6 +38177,7 @@ function (_BaseTool) {
   }, {
     key: "_startPainting",
     value: function _startPainting(evt) {
+      console.log(evt);
       var eventData = evt.detail;
       var element = eventData.element;
       var configuration = segmentationModule.configuration,
@@ -38289,75 +38290,32 @@ function (_BaseTool) {
               stderr = _ref.stderr,
               outputs = _ref.outputs,
               webWorker = _ref.webWorker;
+          console.log(stderr);
           var currentVolumePixelbuffer = outputs[0].data.data;
           var nimageBytes = currentVolumePixelbuffer.length / imagesInRange.length;
 
-          for (var i = 0; i < imagesInRange.length; i++) {
-            var _labelmap2D = getters.labelmap2DByImageIdIndex(labelmap3D, imagesInRange[i], rows, columns);
+          var _loop = function _loop(i) {
+            var labelmap2D = getters.labelmap2DByImageIdIndex(labelmap3D, imagesInRange[i], rows, columns);
+            currentVolumePixelbuffer.slice(i * nimageBytes, (i + 1) * nimageBytes).forEach(function (val, idx) {
+              if (val === 1) {
+                if (eventData.buttons === 1) {
+                  labelmap2D.pixelData[idx] = labelmap3D.activeSegmentIndex;
+                } else if (eventData.buttons === 2) {
+                  labelmap2D.pixelData[idx] = 0;
+                }
+              }
+            });
+            setters.updateSegmentsOnLabelmap2D(labelmap2D);
+          };
 
-            _labelmap2D.pixelData = currentVolumePixelbuffer.slice(i * nimageBytes, (i + 1) * nimageBytes);
-            setters.updateSegmentsOnLabelmap2D(_labelmap2D);
+          for (var i = 0; i < imagesInRange.length; i++) {
+            _loop(i);
           }
 
           Object(_util_segmentation__WEBPACK_IMPORTED_MODULE_11__["triggerLabelmapModifiedEvent"])(element);
           _externalModules_js__WEBPACK_IMPORTED_MODULE_8__["default"].cornerstone.updateImage(element);
         });
-      }); // Const currentImagePixelbuffer = getPixelData(currentImageIdIndex);
-      // const nimageBytes = currentImagePixelbuffer.length;
-      // const currentVolumePixelbuffer = new Uint16Array(
-      //   imagesInRange.length * nimageBytes
-      // );
-      // let offset = 0;
-      // for (let i = 0; i < imagesInRange.length; i++) {
-      //   currentVolumePixelbuffer.set(getPixelData(i), offset);
-      //   offset += nimageBytes;
-      // }
-      // const imageType = new itk.ImageType(
-      //   3,
-      //   IntTypes.UInt16,
-      //   PixelTypes.Scalar,
-      //   1
-      // );
-      // const itkImage = new itk.Image(imageType);
-      // itkImage.data = currentVolumePixelbuffer;
-      // itkImage.size = [columns, rows, imagesInRange.length];
-      // itk
-      //   .runPipelineBrowser(
-      //     null,
-      //     'interpolation',
-      //     [labelmap3D.activeSegmentIndex.toString()],
-      //     [
-      //       {
-      //         path: 'output.json',
-      //         type: itk.IOTypes.Image,
-      //       },
-      //     ],
-      //     [
-      //       {
-      //         path: 'input.json',
-      //         type: itk.IOTypes.Image,
-      //         data: itkImage,
-      //       },
-      //     ]
-      //   )
-      //   .then(function({ stdout, stderr, outputs, webWorker }) {
-      //     for (let i = 0; i < imagesInRange.length; i++) {
-      //       const currentVolumePixelbuffer = outputs[0].data.data;
-      //       const labelmap2D = getters.labelmap2DByImageIdIndex(
-      //         labelmap3D,
-      //         imagesInRange[i],
-      //         rows,
-      //         columns
-      //       );
-      //       labelmap2D.pixelData = currentVolumePixelbuffer.slice(
-      //         i * nimageBytes,
-      //         (i + 1) * nimageBytes
-      //       );
-      //       setters.updateSegmentsOnLabelmap2D(labelmap2D);
-      //     }
-      //     triggerLabelmapModifiedEvent(element);
-      //     external.cornerstone.updateImage(element);
-      //   });
+      });
     }
   }]);
 
