@@ -74,7 +74,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "0e065ec053af953084b1";
+/******/ 	var hotCurrentHash = "521983ffb4c33a7ab8e0";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -38243,7 +38243,8 @@ function (_BaseTool) {
                 case 4:
                   images = _context.sent;
                   _getPixelSpacing = Object(_util_getPixelSpacing__WEBPACK_IMPORTED_MODULE_13__["default"])(images[0]), rowPixelSpacing = _getPixelSpacing.rowPixelSpacing, colPixelSpacing = _getPixelSpacing.colPixelSpacing;
-                  sliceThickness = parseFloat(images[0].data.string('x00180050'));
+                  sliceThickness = parseFloat(images[0].data.string('x00180050') || '3.0'); //TODO HACK
+
                   imagesdata = images.map(function (x) {
                     return x.getPixelData();
                   });
