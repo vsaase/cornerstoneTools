@@ -103,9 +103,12 @@ export default class ITKSegmentationTool extends BaseTool {
       const images = await Promise.all(imageloaders);
       const { rowPixelSpacing, colPixelSpacing } = getPixelSpacing(images[0]);
 
-      const sliceThickness = parseFloat(
-        images[0].data.string('x00180050') || '3.0'
-      ); //TODO HACK
+      const sliceThickness = 3.0; //HACK
+      // try {
+      //   parseFloat(images[0].data.string('x00180050'));
+      // } finally {
+      //   true;
+      // }
       const imagesdata = images.map(x => x.getPixelData());
 
       const nimageBytes = imagesdata[0].length;
