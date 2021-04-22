@@ -5,6 +5,7 @@ import RectangleScissorsTool from './RectangleScissorsTool';
 import CircleScissorsTool from './CircleScissorsTool';
 import CorrectionScissorsTool from './CorrectionScissorsTool';
 import InterpolationTool from './InterpolationTool';
+import ITKSegmentationTool from './ITKSegmentationTool';
 
 // Named Exports
 export { default as BrushTool } from './BrushTool';
@@ -14,6 +15,7 @@ export { default as RectangleScissorsTool } from './RectangleScissorsTool';
 export { default as CircleScissorsTool } from './CircleScissorsTool';
 export { default as CorrectionScissorsTool } from './CorrectionScissorsTool';
 export { default as InterpolationTool } from './InterpolationTool';
+export { default as ITKSegmentationTool } from './ITKSegmentationTool';
 
 // Namespace, default export
 export default {
@@ -24,4 +26,5 @@ export default {
   FreehandScissorsTool,
   RectangleScissorsTool,
   InterpolationTool,
+  ITKSegmentationTool,
 };

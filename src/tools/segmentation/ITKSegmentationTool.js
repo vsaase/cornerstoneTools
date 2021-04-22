@@ -3,6 +3,7 @@ import BaseTool from './../base/BaseTool.js';
 import { getModule } from './../../store/index.js';
 import { triggerLabelmapModifiedEvent } from './../../util/segmentation';
 import { getToolState } from '../../stateManagement/toolState.js';
+import getPixelSpacing from '../../util/getPixelSpacing';
 import { getLogger } from '../../util/logger.js';
 
 import 'itk';
@@ -33,9 +34,7 @@ export default class ITKSegmentationTool extends BaseTool {
   }
 
   preMouseDownCallback(evt) {
-    const eventData = evt.detail;
-
-    this._startPainting(eventData.element);
+    this._startPainting(evt);
 
     return true;
   }
@@ -47,7 +46,9 @@ export default class ITKSegmentationTool extends BaseTool {
    * @param {Object} evt - The event.
    * @returns {void}
    */
-  _startPainting(element) {
+  _startPainting(evt) {
+    const eventData = evt.detail;
+    const element = eventData.element;
     const { configuration, getters, setters } = segmentationModule;
     const enabledElement = external.cornerstone.getEnabledElement(element);
 
@@ -77,6 +78,12 @@ export default class ITKSegmentationTool extends BaseTool {
       imagesInRange,
     };
 
+    const sourceImagePoint = [
+      eventData.currentPoints.image.x,
+      eventData.currentPoints.image.y,
+      currentImageIdIndex,
+    ];
+
     function getSegmentationPixelData(i) {
       const labelmap2DForImageIdIndex = getters.labelmap2DByImageIdIndex(
         labelmap3D,
@@ -88,73 +95,108 @@ export default class ITKSegmentationTool extends BaseTool {
       return labelmap2DForImageIdIndex.pixelData;
     }
 
-    function getImagePixelData(i) {
-      const image = external.cornerstone.loadAndCacheImage(imageIds[i]);
+    async function getITKVolume() {
+      const cornerstone = external.cornerstone;
+      const imageloaders = imageIds.map(cornerstone.loadAndCacheImage);
 
-      return image.getPixelData();
+      const images = await Promise.all(imageloaders);
+      const { rowPixelSpacing, colPixelSpacing } = getPixelSpacing(images[0]);
+
+      const sliceThickness = parseFloat(images[0].data.string('x00180050'));
+      const imagesdata = images.map(x => x.getPixelData());
+
+      const nimageBytes = imagesdata[0].length;
+      const currentVolumePixelbuffer = new Uint16Array(
+        imagesdata.length * nimageBytes
+      );
+      let offset = 0;
+
+      for (let i = 0; i < imagesInRange.length; i++) {
+        currentVolumePixelbuffer.set(imagesdata[i], offset);
+        offset += nimageBytes;
+      }
+
+      const imageType = new itk.ImageType(
+        3,
+        IntTypes.UInt16,
+        PixelTypes.Scalar,
+        1
+      );
+      const itkImage = new itk.Image(imageType);
+
+      itkImage.data = currentVolumePixelbuffer;
+      itkImage.spacing = [rowPixelSpacing, colPixelSpacing, sliceThickness];
+      itkImage.size = [columns, rows, imagesInRange.length];
+
+      return itkImage;
     }
 
-    const currentImagePixelbuffer = getPixelData(currentImageIdIndex);
-    const nimageBytes = currentImagePixelbuffer.length;
-    const currentVolumePixelbuffer = new Uint16Array(
-      imagesInRange.length * nimageBytes
-    );
-    let offset = 0;
+    getITKVolume().then(itkimage => {
+      console.log(itkimage);
+      console.log(sourceImagePoint);
+    });
 
-    for (let i = 0; i < imagesInRange.length; i++) {
-      currentVolumePixelbuffer.set(getPixelData(i), offset);
-      offset += nimageBytes;
-    }
+    // Const currentImagePixelbuffer = getPixelData(currentImageIdIndex);
+    // const nimageBytes = currentImagePixelbuffer.length;
+    // const currentVolumePixelbuffer = new Uint16Array(
+    //   imagesInRange.length * nimageBytes
+    // );
+    // let offset = 0;
 
-    const imageType = new itk.ImageType(
-      3,
-      IntTypes.UInt16,
-      PixelTypes.Scalar,
-      1
-    );
-    const itkImage = new itk.Image(imageType);
+    // for (let i = 0; i < imagesInRange.length; i++) {
+    //   currentVolumePixelbuffer.set(getPixelData(i), offset);
+    //   offset += nimageBytes;
+    // }
 
-    itkImage.data = currentVolumePixelbuffer;
-    itkImage.size = [columns, rows, imagesInRange.length];
+    // const imageType = new itk.ImageType(
+    //   3,
+    //   IntTypes.UInt16,
+    //   PixelTypes.Scalar,
+    //   1
+    // );
+    // const itkImage = new itk.Image(imageType);
 
-    itk
-      .runPipelineBrowser(
-        null,
-        'interpolation',
-        [labelmap3D.activeSegmentIndex.toString()],
-        [
-          {
-            path: 'output.json',
-            type: itk.IOTypes.Image,
-          },
-        ],
-        [
-          {
-            path: 'input.json',
-            type: itk.IOTypes.Image,
-            data: itkImage,
-          },
-        ]
-      )
-      .then(function({ stdout, stderr, outputs, webWorker }) {
-        for (let i = 0; i < imagesInRange.length; i++) {
-          const currentVolumePixelbuffer = outputs[0].data.data;
-          const labelmap2D = getters.labelmap2DByImageIdIndex(
-            labelmap3D,
-            imagesInRange[i],
-            rows,
-            columns
-          );
+    // itkImage.data = currentVolumePixelbuffer;
+    // itkImage.size = [columns, rows, imagesInRange.length];
 
-          labelmap2D.pixelData = currentVolumePixelbuffer.slice(
-            i * nimageBytes,
-            (i + 1) * nimageBytes
-          );
-          setters.updateSegmentsOnLabelmap2D(labelmap2D);
-        }
+    // itk
+    //   .runPipelineBrowser(
+    //     null,
+    //     'interpolation',
+    //     [labelmap3D.activeSegmentIndex.toString()],
+    //     [
+    //       {
+    //         path: 'output.json',
+    //         type: itk.IOTypes.Image,
+    //       },
+    //     ],
+    //     [
+    //       {
+    //         path: 'input.json',
+    //         type: itk.IOTypes.Image,
+    //         data: itkImage,
+    //       },
+    //     ]
+    //   )
+    //   .then(function({ stdout, stderr, outputs, webWorker }) {
+    //     for (let i = 0; i < imagesInRange.length; i++) {
+    //       const currentVolumePixelbuffer = outputs[0].data.data;
+    //       const labelmap2D = getters.labelmap2DByImageIdIndex(
+    //         labelmap3D,
+    //         imagesInRange[i],
+    //         rows,
+    //         columns
+    //       );
 
-        triggerLabelmapModifiedEvent(element);
-        external.cornerstone.updateImage(element);
-      });
+    //       labelmap2D.pixelData = currentVolumePixelbuffer.slice(
+    //         i * nimageBytes,
+    //         (i + 1) * nimageBytes
+    //       );
+    //       setters.updateSegmentsOnLabelmap2D(labelmap2D);
+    //     }
+
+    //     triggerLabelmapModifiedEvent(element);
+    //     external.cornerstone.updateImage(element);
+    //   });
   }
 }
