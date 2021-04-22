@@ -131,9 +131,52 @@ export default class ITKSegmentationTool extends BaseTool {
       return itkImage;
     }
 
-    getITKVolume().then(itkimage => {
-      console.log(itkimage);
+    getITKVolume().then(itkImage => {
+      console.log(itkImage);
       console.log(sourceImagePoint);
+      itk
+        .runPipelineBrowser(
+          null,
+          'segmentation',
+          [...sourceImagePoint.map(Math.round).map(x => x.toString())],
+          [
+            {
+              path: 'output.json',
+              type: itk.IOTypes.Image,
+            },
+          ],
+          [
+            {
+              path: 'input.json',
+              type: itk.IOTypes.Image,
+              data: itkImage,
+            },
+          ]
+        )
+        .then(function({ stdout, stderr, outputs, webWorker }) {
+          const currentVolumePixelbuffer = outputs[0].data.data;
+
+          const nimageBytes =
+            currentVolumePixelbuffer.length / imagesInRange.length;
+
+          for (let i = 0; i < imagesInRange.length; i++) {
+            const labelmap2D = getters.labelmap2DByImageIdIndex(
+              labelmap3D,
+              imagesInRange[i],
+              rows,
+              columns
+            );
+
+            labelmap2D.pixelData = currentVolumePixelbuffer.slice(
+              i * nimageBytes,
+              (i + 1) * nimageBytes
+            );
+            setters.updateSegmentsOnLabelmap2D(labelmap2D);
+          }
+
+          triggerLabelmapModifiedEvent(element);
+          external.cornerstone.updateImage(element);
+        });
     });
 
     // Const currentImagePixelbuffer = getPixelData(currentImageIdIndex);

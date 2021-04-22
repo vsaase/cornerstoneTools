@@ -74,7 +74,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "1c0a785eeff42eeb26dc";
+/******/ 	var hotCurrentHash = "ab37a5a1a2542a4d82ab";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -38083,30 +38083,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ITKSegmentationTool; });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "../node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "../node_modules/@babel/runtime/helpers/asyncToGenerator.js");
-/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "../node_modules/@babel/runtime/helpers/classCallCheck.js");
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "../node_modules/@babel/runtime/helpers/createClass.js");
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "../node_modules/@babel/runtime/helpers/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "../node_modules/@babel/runtime/helpers/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "../node_modules/@babel/runtime/helpers/inherits.js");
-/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _externalModules_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./../../externalModules.js */ "./externalModules.js");
-/* harmony import */ var _base_BaseTool_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./../base/BaseTool.js */ "./tools/base/BaseTool.js");
-/* harmony import */ var _store_index_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./../../store/index.js */ "./store/index.js");
-/* harmony import */ var _util_segmentation__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./../../util/segmentation */ "./util/segmentation/index.js");
-/* harmony import */ var _stateManagement_toolState_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../stateManagement/toolState.js */ "./stateManagement/toolState.js");
-/* harmony import */ var _util_getPixelSpacing__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../util/getPixelSpacing */ "./util/getPixelSpacing.js");
-/* harmony import */ var _util_logger_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../util/logger.js */ "./util/logger.js");
-/* harmony import */ var itk__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! itk */ "../node_modules/itk/index.js");
-/* harmony import */ var itk_IntTypes__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! itk/IntTypes */ "../node_modules/itk/IntTypes.js");
-/* harmony import */ var itk_IntTypes__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(itk_IntTypes__WEBPACK_IMPORTED_MODULE_15__);
-/* harmony import */ var itk_PixelTypes__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! itk/PixelTypes */ "../node_modules/itk/PixelTypes.js");
-/* harmony import */ var itk_PixelTypes__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(itk_PixelTypes__WEBPACK_IMPORTED_MODULE_16__);
+/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ "../node_modules/@babel/runtime/helpers/toConsumableArray.js");
+/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "../node_modules/@babel/runtime/helpers/asyncToGenerator.js");
+/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "../node_modules/@babel/runtime/helpers/classCallCheck.js");
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "../node_modules/@babel/runtime/helpers/createClass.js");
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "../node_modules/@babel/runtime/helpers/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "../node_modules/@babel/runtime/helpers/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "../node_modules/@babel/runtime/helpers/inherits.js");
+/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _externalModules_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./../../externalModules.js */ "./externalModules.js");
+/* harmony import */ var _base_BaseTool_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./../base/BaseTool.js */ "./tools/base/BaseTool.js");
+/* harmony import */ var _store_index_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./../../store/index.js */ "./store/index.js");
+/* harmony import */ var _util_segmentation__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./../../util/segmentation */ "./util/segmentation/index.js");
+/* harmony import */ var _stateManagement_toolState_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../stateManagement/toolState.js */ "./stateManagement/toolState.js");
+/* harmony import */ var _util_getPixelSpacing__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../util/getPixelSpacing */ "./util/getPixelSpacing.js");
+/* harmony import */ var _util_logger_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../util/logger.js */ "./util/logger.js");
+/* harmony import */ var itk__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! itk */ "../node_modules/itk/index.js");
+/* harmony import */ var itk_IntTypes__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! itk/IntTypes */ "../node_modules/itk/IntTypes.js");
+/* harmony import */ var itk_IntTypes__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(itk_IntTypes__WEBPACK_IMPORTED_MODULE_16__);
+/* harmony import */ var itk_PixelTypes__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! itk/PixelTypes */ "../node_modules/itk/PixelTypes.js");
+/* harmony import */ var itk_PixelTypes__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(itk_PixelTypes__WEBPACK_IMPORTED_MODULE_17__);
+
 
 
 
@@ -38125,8 +38128,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var itk = window.itk;
-var logger = Object(_util_logger_js__WEBPACK_IMPORTED_MODULE_13__["getLogger"])('tools:ITKSegmentationTool');
-var segmentationModule = Object(_store_index_js__WEBPACK_IMPORTED_MODULE_9__["getModule"])('segmentation');
+var logger = Object(_util_logger_js__WEBPACK_IMPORTED_MODULE_14__["getLogger"])('tools:ITKSegmentationTool');
+var segmentationModule = Object(_store_index_js__WEBPACK_IMPORTED_MODULE_10__["getModule"])('segmentation');
 /**
  * @public
  * @class ITKSegmentationTool
@@ -38138,12 +38141,12 @@ var segmentationModule = Object(_store_index_js__WEBPACK_IMPORTED_MODULE_9__["ge
 var ITKSegmentationTool =
 /*#__PURE__*/
 function (_BaseTool) {
-  _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_6___default()(ITKSegmentationTool, _BaseTool);
+  _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_7___default()(ITKSegmentationTool, _BaseTool);
 
   function ITKSegmentationTool() {
     var props = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
-    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default()(this, ITKSegmentationTool);
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_3___default()(this, ITKSegmentationTool);
 
     var defaultProps = {
       name: 'ITKSegmentation',
@@ -38153,10 +38156,10 @@ function (_BaseTool) {
       },
       mixins: []
     };
-    return _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4___default()(this, _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5___default()(ITKSegmentationTool).call(this, props, defaultProps));
+    return _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_5___default()(this, _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6___default()(ITKSegmentationTool).call(this, props, defaultProps));
   }
 
-  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_3___default()(ITKSegmentationTool, [{
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_4___default()(ITKSegmentationTool, [{
     key: "preMouseDownCallback",
     value: function preMouseDownCallback(evt) {
       this._startPainting(evt);
@@ -38179,7 +38182,7 @@ function (_BaseTool) {
       var configuration = segmentationModule.configuration,
           getters = segmentationModule.getters,
           setters = segmentationModule.setters;
-      var enabledElement = _externalModules_js__WEBPACK_IMPORTED_MODULE_7__["default"].cornerstone.getEnabledElement(element);
+      var enabledElement = _externalModules_js__WEBPACK_IMPORTED_MODULE_8__["default"].cornerstone.getEnabledElement(element);
 
       if (enabledElement.image === undefined) {
         return;
@@ -38188,7 +38191,7 @@ function (_BaseTool) {
       var _enabledElement$image = enabledElement.image,
           rows = _enabledElement$image.rows,
           columns = _enabledElement$image.columns;
-      var stackState = Object(_stateManagement_toolState_js__WEBPACK_IMPORTED_MODULE_11__["getToolState"])(element, 'stack');
+      var stackState = Object(_stateManagement_toolState_js__WEBPACK_IMPORTED_MODULE_12__["getToolState"])(element, 'stack');
       var stackData = stackState.data[0];
       var imageIds = stackData.imageIds;
 
@@ -38222,7 +38225,7 @@ function (_BaseTool) {
       }
 
       function _getITKVolume() {
-        _getITKVolume = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()(
+        _getITKVolume = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2___default()(
         /*#__PURE__*/
         _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
           var cornerstone, imageloaders, images, _getPixelSpacing, rowPixelSpacing, colPixelSpacing, sliceThickness, imagesdata, nimageBytes, currentVolumePixelbuffer, offset, i, imageType, itkImage;
@@ -38231,14 +38234,14 @@ function (_BaseTool) {
             while (1) {
               switch (_context.prev = _context.next) {
                 case 0:
-                  cornerstone = _externalModules_js__WEBPACK_IMPORTED_MODULE_7__["default"].cornerstone;
+                  cornerstone = _externalModules_js__WEBPACK_IMPORTED_MODULE_8__["default"].cornerstone;
                   imageloaders = imageIds.map(cornerstone.loadAndCacheImage);
                   _context.next = 4;
                   return Promise.all(imageloaders);
 
                 case 4:
                   images = _context.sent;
-                  _getPixelSpacing = Object(_util_getPixelSpacing__WEBPACK_IMPORTED_MODULE_12__["default"])(images[0]), rowPixelSpacing = _getPixelSpacing.rowPixelSpacing, colPixelSpacing = _getPixelSpacing.colPixelSpacing;
+                  _getPixelSpacing = Object(_util_getPixelSpacing__WEBPACK_IMPORTED_MODULE_13__["default"])(images[0]), rowPixelSpacing = _getPixelSpacing.rowPixelSpacing, colPixelSpacing = _getPixelSpacing.colPixelSpacing;
                   sliceThickness = parseFloat(images[0].data.string('x00180050'));
                   imagesdata = images.map(function (x) {
                     return x.getPixelData();
@@ -38252,7 +38255,7 @@ function (_BaseTool) {
                     offset += nimageBytes;
                   }
 
-                  imageType = new itk.ImageType(3, itk_IntTypes__WEBPACK_IMPORTED_MODULE_15___default.a.UInt16, itk_PixelTypes__WEBPACK_IMPORTED_MODULE_16___default.a.Scalar, 1);
+                  imageType = new itk.ImageType(3, itk_IntTypes__WEBPACK_IMPORTED_MODULE_16___default.a.UInt16, itk_PixelTypes__WEBPACK_IMPORTED_MODULE_17___default.a.Scalar, 1);
                   itkImage = new itk.Image(imageType);
                   itkImage.data = currentVolumePixelbuffer;
                   itkImage.spacing = [rowPixelSpacing, colPixelSpacing, sliceThickness];
@@ -38269,9 +38272,36 @@ function (_BaseTool) {
         return _getITKVolume.apply(this, arguments);
       }
 
-      getITKVolume().then(function (itkimage) {
-        console.log(itkimage);
+      getITKVolume().then(function (itkImage) {
+        console.log(itkImage);
         console.log(sourceImagePoint);
+        itk.runPipelineBrowser(null, 'segmentation', _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_1___default()(sourceImagePoint.map(Math.round).map(function (x) {
+          return x.toString();
+        })), [{
+          path: 'output.json',
+          type: itk.IOTypes.Image
+        }], [{
+          path: 'input.json',
+          type: itk.IOTypes.Image,
+          data: itkImage
+        }]).then(function (_ref) {
+          var stdout = _ref.stdout,
+              stderr = _ref.stderr,
+              outputs = _ref.outputs,
+              webWorker = _ref.webWorker;
+          var currentVolumePixelbuffer = outputs[0].data.data;
+          var nimageBytes = currentVolumePixelbuffer.length / imagesInRange.length;
+
+          for (var i = 0; i < imagesInRange.length; i++) {
+            var _labelmap2D = getters.labelmap2DByImageIdIndex(labelmap3D, imagesInRange[i], rows, columns);
+
+            _labelmap2D.pixelData = currentVolumePixelbuffer.slice(i * nimageBytes, (i + 1) * nimageBytes);
+            setters.updateSegmentsOnLabelmap2D(_labelmap2D);
+          }
+
+          Object(_util_segmentation__WEBPACK_IMPORTED_MODULE_11__["triggerLabelmapModifiedEvent"])(element);
+          _externalModules_js__WEBPACK_IMPORTED_MODULE_8__["default"].cornerstone.updateImage(element);
+        });
       }); // Const currentImagePixelbuffer = getPixelData(currentImageIdIndex);
       // const nimageBytes = currentImagePixelbuffer.length;
       // const currentVolumePixelbuffer = new Uint16Array(
@@ -38332,7 +38362,7 @@ function (_BaseTool) {
   }]);
 
   return ITKSegmentationTool;
-}(_base_BaseTool_js__WEBPACK_IMPORTED_MODULE_8__["default"]);
+}(_base_BaseTool_js__WEBPACK_IMPORTED_MODULE_9__["default"]);
 
 
 

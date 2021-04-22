@@ -106,6 +106,23 @@ module.exports = {
               'tools',
               'segmentation',
               'web-build',
+              'segmentationWasm.js'
+            ),
+            to: path.join(
+              basedir,
+              p,
+              'itk',
+              'Pipelines',
+              'segmentationWasm.js'
+            ),
+          },
+          {
+            from: path.join(
+              basedir,
+              'src',
+              'tools',
+              'segmentation',
+              'web-build',
               'interpolationWasm.wasm'
             ),
             to: path.join(
@@ -114,6 +131,23 @@ module.exports = {
               'itk',
               'Pipelines',
               'interpolationWasm.wasm'
+            ),
+          },
+          {
+            from: path.join(
+              basedir,
+              'src',
+              'tools',
+              'segmentation',
+              'web-build',
+              'segmentationWasm.wasm'
+            ),
+            to: path.join(
+              basedir,
+              p,
+              'itk',
+              'Pipelines',
+              'segmentationWasm.wasm'
             ),
           },
         ])
