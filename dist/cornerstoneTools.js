@@ -1,4 +1,4 @@
-/*! cornerstone-tools - 4.0.1 - 2021-04-22 | (c) 2017 Chris Hafey | https://github.com/cornerstonejs/cornerstoneTools */
+/*! cornerstone-tools - 4.0.1 - 2021-04-27 | (c) 2017 Chris Hafey | https://github.com/cornerstonejs/cornerstoneTools */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
@@ -74,7 +74,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "fab9db48497db81d3147";
+/******/ 	var hotCurrentHash = "75b126179bdca002aac5";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -38127,6 +38127,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var itk = window.itk;
 var logger = Object(_util_logger_js__WEBPACK_IMPORTED_MODULE_14__["getLogger"])('tools:ITKSegmentationTool');
 var segmentationModule = Object(_store_index_js__WEBPACK_IMPORTED_MODULE_10__["getModule"])('segmentation');
@@ -38207,13 +38208,26 @@ function (_BaseTool) {
       }, function (v, k) {
         return k;
       });
-      this.paintEventData = {
+      var paintEventData = {
         labelmap2D: labelmap2D,
         labelmap3D: labelmap3D,
         currentImageIdIndex: currentImageIdIndex,
         activeLabelmapIndex: activeLabelmapIndex,
         imagesInRange: imagesInRange
       };
+
+      if (configuration.storeHistory) {
+        var previousPixeldataForImagesInRange = [];
+
+        for (var i = 0; i < imagesInRange.length; i++) {
+          var labelmap2DForImageIdIndex = getters.labelmap2DByImageIdIndex(labelmap3D, i, rows, columns);
+          var previousPixeldata = labelmap2DForImageIdIndex.pixelData.slice();
+          previousPixeldataForImagesInRange.push(previousPixeldata);
+        }
+
+        paintEventData.previousPixeldataForImagesInRange = previousPixeldataForImagesInRange;
+      }
+
       var sourceImagePoint = [eventData.currentPoints.image.x, eventData.currentPoints.image.y, currentImageIdIndex];
 
       function getSegmentationPixelData(i) {
@@ -38229,7 +38243,7 @@ function (_BaseTool) {
         _getITKVolume = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2___default()(
         /*#__PURE__*/
         _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-          var cornerstone, imageloaders, images, _getPixelSpacing, rowPixelSpacing, colPixelSpacing, sliceThickness, imagesdata, nimageBytes, currentVolumePixelbuffer, offset, i, imageType, itkImage;
+          var cornerstone, imageloaders, images, _getPixelSpacing, rowPixelSpacing, colPixelSpacing, sliceThickness, imagesdata, nimageBytes, currentVolumePixelbuffer, offset, _i2, imageType, itkImage;
 
           return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
             while (1) {
@@ -38243,7 +38257,7 @@ function (_BaseTool) {
                 case 4:
                   images = _context.sent;
                   _getPixelSpacing = Object(_util_getPixelSpacing__WEBPACK_IMPORTED_MODULE_13__["default"])(images[0]), rowPixelSpacing = _getPixelSpacing.rowPixelSpacing, colPixelSpacing = _getPixelSpacing.colPixelSpacing;
-                  sliceThickness = 3.0; //HACK
+                  sliceThickness = 3.0; // HACK
                   // try {
                   //   parseFloat(images[0].data.string('x00180050'));
                   // } finally {
@@ -38257,8 +38271,8 @@ function (_BaseTool) {
                   currentVolumePixelbuffer = new Uint16Array(imagesdata.length * nimageBytes);
                   offset = 0;
 
-                  for (i = 0; i < imagesInRange.length; i++) {
-                    currentVolumePixelbuffer.set(imagesdata[i], offset);
+                  for (_i2 = 0; _i2 < imagesInRange.length; _i2++) {
+                    currentVolumePixelbuffer.set(imagesdata[_i2], offset);
                     offset += nimageBytes;
                   }
 
@@ -38299,10 +38313,11 @@ function (_BaseTool) {
           console.log(stderr);
           var currentVolumePixelbuffer = outputs[0].data.data;
           var nimageBytes = currentVolumePixelbuffer.length / imagesInRange.length;
+          var operations = [];
 
-          var _loop = function _loop(i) {
-            var labelmap2D = getters.labelmap2DByImageIdIndex(labelmap3D, imagesInRange[i], rows, columns);
-            currentVolumePixelbuffer.slice(i * nimageBytes, (i + 1) * nimageBytes).forEach(function (val, idx) {
+          var _loop = function _loop(_i) {
+            var labelmap2D = getters.labelmap2DByImageIdIndex(labelmap3D, imagesInRange[_i], rows, columns);
+            currentVolumePixelbuffer.slice(_i * nimageBytes, (_i + 1) * nimageBytes).forEach(function (val, idx) {
               if (val === 1) {
                 if (eventData.buttons === 1) {
                   labelmap2D.pixelData[idx] = labelmap3D.activeSegmentIndex;
@@ -38311,11 +38326,27 @@ function (_BaseTool) {
                 }
               }
             });
+
+            if (configuration.storeHistory) {
+              var _previousPixeldataForImagesInRange = paintEventData.previousPixeldataForImagesInRange;
+              var _previousPixeldata = _previousPixeldataForImagesInRange[_i];
+              var _labelmap2D = labelmap3D.labelmaps2D[_i];
+              var newPixelData = _labelmap2D.pixelData;
+              operations.push({
+                i: _i,
+                diff: Object(_util_segmentation__WEBPACK_IMPORTED_MODULE_11__["getDiffBetweenPixelData"])(_previousPixeldata, newPixelData)
+              });
+            }
+
             setters.updateSegmentsOnLabelmap2D(labelmap2D);
           };
 
-          for (var i = 0; i < imagesInRange.length; i++) {
-            _loop(i);
+          for (var _i = 0; _i < imagesInRange.length; _i++) {
+            _loop(_i);
+          }
+
+          if (configuration.storeHistory) {
+            setters.pushState(element, operations);
           }
 
           Object(_util_segmentation__WEBPACK_IMPORTED_MODULE_11__["triggerLabelmapModifiedEvent"])(element);

@@ -5,6 +5,7 @@ import { triggerLabelmapModifiedEvent } from './../../util/segmentation';
 import { getToolState } from '../../stateManagement/toolState.js';
 import getPixelSpacing from '../../util/getPixelSpacing';
 import { getLogger } from '../../util/logger.js';
+import { getDiffBetweenPixelData } from '../../util/segmentation';
 
 import 'itk';
 import IntTypes from 'itk/IntTypes';
@@ -71,13 +72,32 @@ export default class ITKSegmentationTool extends BaseTool {
 
     const imagesInRange = Array.from({ length: imageIds.length }, (v, k) => k);
 
-    this.paintEventData = {
+    const paintEventData = {
       labelmap2D,
       labelmap3D,
       currentImageIdIndex,
       activeLabelmapIndex,
       imagesInRange,
     };
+
+    if (configuration.storeHistory) {
+      const previousPixeldataForImagesInRange = [];
+
+      for (let i = 0; i < imagesInRange.length; i++) {
+        const labelmap2DForImageIdIndex = getters.labelmap2DByImageIdIndex(
+          labelmap3D,
+          i,
+          rows,
+          columns
+        );
+
+        const previousPixeldata = labelmap2DForImageIdIndex.pixelData.slice();
+
+        previousPixeldataForImagesInRange.push(previousPixeldata);
+      }
+
+      paintEventData.previousPixeldataForImagesInRange = previousPixeldataForImagesInRange;
+    }
 
     const sourceImagePoint = [
       eventData.currentPoints.image.x,
@@ -103,7 +123,7 @@ export default class ITKSegmentationTool extends BaseTool {
       const images = await Promise.all(imageloaders);
       const { rowPixelSpacing, colPixelSpacing } = getPixelSpacing(images[0]);
 
-      const sliceThickness = 3.0; //HACK
+      const sliceThickness = 3.0; // HACK
       // try {
       //   parseFloat(images[0].data.string('x00180050'));
       // } finally {
@@ -166,6 +186,8 @@ export default class ITKSegmentationTool extends BaseTool {
           const nimageBytes =
             currentVolumePixelbuffer.length / imagesInRange.length;
 
+          const operations = [];
+
           for (let i = 0; i < imagesInRange.length; i++) {
             const labelmap2D = getters.labelmap2DByImageIdIndex(
               labelmap3D,
@@ -185,7 +207,25 @@ export default class ITKSegmentationTool extends BaseTool {
                   }
                 }
               });
+
+            if (configuration.storeHistory) {
+              const { previousPixeldataForImagesInRange } = paintEventData;
+
+              const previousPixeldata = previousPixeldataForImagesInRange[i];
+              const labelmap2D = labelmap3D.labelmaps2D[i];
+              const newPixelData = labelmap2D.pixelData;
+
+              operations.push({
+                i,
+                diff: getDiffBetweenPixelData(previousPixeldata, newPixelData),
+              });
+            }
+
             setters.updateSegmentsOnLabelmap2D(labelmap2D);
+          }
+
+          if (configuration.storeHistory) {
+            setters.pushState(element, operations);
           }
 
           triggerLabelmapModifiedEvent(element);
